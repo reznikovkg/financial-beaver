@@ -25,8 +25,11 @@
         <div style="font-size: medium;">{{ sum }}₽</div>
       </li>
       <li>
-        <button style="font-size: x-large; font-weight: bold;" class="deposit-preview__button"
-          :class="{ 'deposit-preview__button--disabled': isButtonDisabled }" :disabled="isButtonDisabled">Выбрать</button>
+        <button
+          style="font-size: x-large; font-weight: bold;"
+          class="deposit-preview__button"
+          :disabled="isButtonDisabled"
+        >Выбрать</button>
       </li>
     </ul>
   </div>
@@ -70,11 +73,9 @@ export default {
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   color: #212940;
   margin-bottom: 20px;
-
   & ul {
     display: table-row;
   }
-
   & li {
     display: table-cell;
     text-align: left;
@@ -86,26 +87,22 @@ export default {
       white-space: nowrap;
     }
   }
-
   &__block>* {
     margin-bottom: 10px;
     font-size: large;
   }
-
   &__flex {
     display: flex;
     &>* {
       margin-right: 10px;
     }
   }
-
   &__image {
     height: auto;
     width: 100px;
     border-radius: 50%;
     margin-left: 10px;
   }
-
   &__button {
     background: #4E63D9;
     height: 70%;
@@ -120,8 +117,10 @@ export default {
     &:hover {
       background: #3a4aa4;
     }
-    &--disabled {
+    &:disabled {
       background: #4d4d4deb;
+      cursor: default;
     }
   }
-}</style>
+}
+</style>
