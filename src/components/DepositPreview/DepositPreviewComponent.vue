@@ -1,10 +1,10 @@
 <template>
   <div>
     <ul class="deposit-preview">
-      <li>
+      <li style="width: 12%;">
         <img :src="bankIcon" alt="BankIcon" class="deposit-preview__image" />
       </li>
-      <li class="deposit-preview__block">
+      <li style="width: 40%;" class="deposit-preview__block">
         <div style="font-size: xx-large; font-weight: bold;">{{ depositName }}</div>
         <div class="deposit-preview__flex">
           <div style="opacity: 75%; font-weight: bold; font-size: x-large;">{{ bankName }}</div>
@@ -12,17 +12,17 @@
           <div style="opacity: 50%;">★ {{ rating }}</div>
         </div>
       </li>
-      <li style="font-size: large;">
+      <li class="deposit-preview__block" style="width: 8%;">
         <div style="font-weight: bold;">Ставка</div>
-        <div style="font-size: small;">До {{ rate }}%</div>
+        <div style="font-size: medium;">До {{ rate }}%</div>
       </li>
-      <li style="font-size: large;">
+      <li class="deposit-preview__block" style="width: 10%;">
         <div style="font-weight: bold;">Срок</div>
-        <div style="font-size: medium;">От {{ period }}</div>
+        <div style="font-size: medium;">{{ period }}</div>
       </li>
-      <li style="font-size: large;">
+      <li class="deposit-preview__block" style="width: 10%;">
         <div style="font-weight: bold;">Сумма</div>
-        <div style="font-size: medium;">от {{ sum }}₽</div>
+        <div style="font-size: medium;">{{ sum }}₽</div>
       </li>
       <li>
         <button style="font-size: x-large; font-weight: bold;" class="deposit-preview__button"
@@ -61,15 +61,15 @@ export default {
   background: #4E63D926;
   border: 5px;
   border-radius: 30px;
-  padding: 10px;
+  padding: 0px;
   display: table;
   justify-content: left;
   align-items: center;
-  height: 100px;
-  width: calc(100% - 20px);
+  height: 120px;
+  width: 100%;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   color: #212940;
-  margin: 20px;
+  margin-bottom: 20px;
 
   & ul {
     display: table-row;
@@ -81,34 +81,29 @@ export default {
     height: 100px;
     vertical-align: middle;
 
-    &.left {
-      text-align: left;
-      white-space: nowrap;
-    }
-
-    &.right {
+    &:last-child {
       text-align: right;
       white-space: nowrap;
     }
   }
 
-  &__block {
-    display: block;
-    padding: inherit;
+  &__block>* {
+    margin-bottom: 10px;
+    font-size: large;
   }
 
   &__flex {
     display: flex;
-    padding-top: 10px;
     &>* {
       margin-right: 10px;
     }
   }
 
   &__image {
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100px;
     border-radius: 50%;
+    margin-left: 10px;
   }
 
   &__button {
@@ -120,6 +115,7 @@ export default {
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     padding-left: 25px;
     padding-right: 25px;
+    margin-right: 25px;
     cursor: pointer;
     &:hover {
       background: #3a4aa4;

@@ -1,42 +1,42 @@
 <template>
   <div class="wrapping">
     <DepositPreviewComponent
-      bank-icon="https://papik.pro/uploads/posts/2021-11/1636135154_5-papik-pro-p-gazprombank-logotip-foto-6.jpg"
-      deposit-name="Управляй процентом"
-      bank-name="Газпромбанк"
-      license-number="756495785"
-      :rating="4.5"
-      :rate="10"
-      period="1 дня"
-      sum="1 - 1 500 000"
-      :is-button-disabled="false"
-    ></DepositPreviewComponent>
-    <DepositPreviewComponent
-      bank-icon="https://papik.pro/uploads/posts/2021-11/1636135154_5-papik-pro-p-gazprombank-logotip-foto-6.jpg"
-      deposit-name="Управляй процентом"
-      bank-name="Газпромбанк"
-      license-number="756495785"
-      :rating="4.5"
-      :rate="10"
-      period="1 дня"
-      sum="1 - 1 500 000"
-      :is-button-disabled="false"
+      v-for="(i, index) in deposits" :key="index"
+      :bank-icon="i.bankIcon"
+      :deposit-name="i.depositName"
+      :bank-name="i.bankName"
+      :license-number="i.licenseNumber"
+      :rating="i.rating"
+      :rate="i.rate"
+      :period="i.period"
+      :sum="i.sum"
+      :is-button-disabled="i.isButtonDisabled"
     ></DepositPreviewComponent>
   </div>
 </template>
 
 <script>
 import DepositPreviewComponent from '@/components/DepositPreview/DepositPreviewComponent.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'BanksPage',
-  components: { DepositPreviewComponent }
+  components: { DepositPreviewComponent },
+  computed: {
+    ...mapGetters('depositPreview', [
+      'getDeposits'
+    ]),
+    deposits () {
+      return this.getDeposits
+    }
+  }
 }
 </script>
 
 <style>
 .wrapping {
-  padding: 20px;
   width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
