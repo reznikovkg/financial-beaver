@@ -14,6 +14,11 @@ const routes = [
     path: '/btn',
     name: 'btn',
     component: () => import(/* webpackChunkName: "btn" */ '../views/HomeView.vue')
+  },
+  {
+    path: '/golden-ring',
+    name: 'golden-ring',
+    component: () => import(/* webpackChunkName: "golden-ring" */ '../views/GoldenRingBankPage/GoldenRingPage.vue')
   }
 ]
 
