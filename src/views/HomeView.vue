@@ -1,8 +1,11 @@
 <template>
   <div class="home">
-    <router-link :to="{ name: 'btn' }">
+    <p><router-link :to="{ name: 'btn' }">
       Btn
-    </router-link>
+    </router-link></p>
+    <p><router-link :to="{ name: 'banks' }">
+      banks page
+    </router-link></p>
   </div>
 </template>
 
