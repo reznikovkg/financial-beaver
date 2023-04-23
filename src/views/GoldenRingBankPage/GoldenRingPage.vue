@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <img class="wide-pattern-top" src="../../assets/pattern.png" alt="Узор"/>
+    <WideTopPattern/>
     <div class="content-wrapper">
       <div class="text-container">
         <span class="title block">Банк Золотое Кольцо</span>
@@ -11,13 +11,17 @@
       </div>
       <img class="pattern" src="../../assets/hohloma.png" alt="Хохлома"/>
     </div>
-    <img class="wide-pattern-bottom" src="../../assets/pattern.png" alt="Узор"/>
+    <WideBottomPattern/>
   </div>
 </template>
 
 <script>
+import WideTopPattern from '@/views/GoldenRingBankPage/components/WidePatterns/WideTopPattern.vue'
+import WideBottomPattern from '@/views/GoldenRingBankPage/components/WidePatterns/WideBottomPattern.vue'
+
 export default {
-  name: 'GoldenRingPage'
+  name: 'GoldenRingPage',
+  components: { WideBottomPattern, WideTopPattern }
 }
 </script>
 
