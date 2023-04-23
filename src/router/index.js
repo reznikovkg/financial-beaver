@@ -19,6 +19,11 @@ const routes = [
     path: '/banks',
     name: 'banks',
     component: () => import(/* webpackChunkName: "btn" */ '../views/BanksView.vue')
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import(/* webpackChunkName: "btn" */ '../views/SearcherView.vue')
   }
 ]
 
