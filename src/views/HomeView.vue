@@ -9,11 +9,19 @@
     <router-link :to="{ name: 'search' }">
       Search page
     </router-link>
+    <p>
+      <button @click="() => openExampleModal()">Открыть модалку</button>
+    </p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeView'
+  name: 'HomeView',
+  methods: {
+    openExampleModal () {
+      this.$openExampleModal({ param2: '2' })
+    }
+  }
 }
 </script>
