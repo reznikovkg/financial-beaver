@@ -1,17 +1,18 @@
 <template>
   <div class="home">
     <p><router-link :to="{ name: 'btn' }">
-      Btn
-    </router-link></p>
+        Btn
+      </router-link></p>
     <p><router-link :to="{ name: 'banks' }">
-      banks page
-    </router-link></p>
-    <router-link :to="{ name: 'search' }">
-      Search page
-    </router-link>
-    <p>
-      <button @click="() => openExampleModal()">Открыть модалку</button>
-    </p>
+        banks page
+      </router-link></p>
+    <p><router-link :to="{ name: 'search' }">
+        Search page
+      </router-link></p>
+    <p><button @click="() => openExampleModal()">Открыть модалку</button></p>
+    <p><router-link :to="{ name: 'sper-page' }">
+        Sper Page
+      </router-link></p>
   </div>
 </template>
 
