@@ -9,6 +9,7 @@ export default {
     tabs: [
       {
         img: 'img_theme',
+        url: true,
         siteName: 'sait.ru',
         siteUrl: 'https://sait.ru',
         linkTitle: 'Сравнить все банки и счета',

@@ -1,4 +1,5 @@
 <template>
+<router-link :to="tab.url ? { name: 'banks' } : {}" >
   <div class="tab__container">
     <div class="tab__header">
       <div class="tab__image"></div>
@@ -12,6 +13,7 @@
       <div class="tab__description">{{tab.addInfo}}</div>
     </div>
   </div>
+</router-link>
 </template>
 
 <script>

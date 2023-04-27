@@ -25,11 +25,15 @@
         <div style="font-size: medium;">{{ sum }}₽</div>
       </li>
       <li>
-        <button
-          style="font-size: x-large; font-weight: bold;"
-          class="deposit-preview__button"
-          :disabled="isButtonDisabled"
-        >Выбрать</button>
+        <router-link :to="{ name: deposit.url }">
+          <button
+            style="font-size: x-large; font-weight: bold;"
+            class="deposit-preview__button"
+            :disabled="isButtonDisabled"
+          >
+            Выбрать
+          </button>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -39,6 +43,7 @@
 export default {
   name: 'DepositPreview',
   props: {
+    deposit: Object,
     bankIcon: String,
     depositName: String,
     bankName: String,
@@ -108,7 +113,7 @@ export default {
     height: 70%;
     border-radius: 20px;
     border: 0px;
-    color: rgb(216, 216, 216);
+    color: white;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     padding-left: 25px;
     padding-right: 25px;

@@ -16,7 +16,8 @@ export default {
         rate: 7,
         period: 'от 90 дней',
         sum: 'от 100 000',
-        isButtonDisabled: false
+        isButtonDisabled: false,
+        url: ''
       },
       {
         bankIcon: 'bankIcons/UBRIR.png',
@@ -27,7 +28,8 @@ export default {
         rate: 8.25,
         period: '390 дней',
         sum: 'от 100 000',
-        isButtonDisabled: true
+        isButtonDisabled: true,
+        url: ''
       },
       {
         bankIcon: 'bankIcons/Sper.png',
@@ -38,7 +40,8 @@ export default {
         rate: 40,
         period: 'от 90 дней',
         sum: 'от 30 000',
-        isButtonDisabled: false
+        isButtonDisabled: false,
+        url: 'sper-page'
       },
       {
         bankIcon: 'bankIcons/Vigoda.png',
@@ -49,7 +52,8 @@ export default {
         rate: 20,
         period: 'от 90 дней',
         sum: 'от 50 000',
-        isButtonDisabled: false
+        isButtonDisabled: false,
+        url: 'golden-ring'
       },
       {
         bankIcon: 'bankIcons/Gazprombank.png',
@@ -60,7 +64,8 @@ export default {
         rate: 10,
         period: 'от 1 дня',
         sum: '1 - 1 500 000',
-        isButtonDisabled: true
+        isButtonDisabled: true,
+        url: ''
       }
     ]
   },
