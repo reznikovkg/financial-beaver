@@ -34,6 +34,11 @@ const routes = [
     path: '/sper-page',
     name: 'sper-page',
     component: () => import(/* webpackChunkName: "SperPage" */ '../views/Sper/SperPage.vue')
+  },
+  {
+    path: '/result',
+    name: 'result',
+    component: () => import(/* webpackChunkName: "ResultPage" */ '../views/Result/ResultPage.vue')
   }
 ]
 
