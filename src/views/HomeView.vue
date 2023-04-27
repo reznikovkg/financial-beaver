@@ -9,7 +9,7 @@
     <p><router-link :to="{ name: 'search' }">
         Search page
       </router-link></p>
-    <p><button @click="() => openExampleModal()">Открыть модалку</button></p>
+    <p><button @click="() => openBoberModal()">Открыть модалку</button></p>
     <p><router-link :to="{ name: 'sper-page' }">
         Sper Page
       </router-link></p>
@@ -23,8 +23,8 @@
 export default {
   name: 'HomeView',
   methods: {
-    openExampleModal () {
-      this.$openExampleModal({ param2: '2' })
+    openBoberModal () {
+      this.$openBoberModal({ param2: '2' })
     }
   }
 }

@@ -35,4 +35,14 @@ export default {
   user-select: none;
   /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
+
+.modal-bober .vm--modal {
+  border: 3px solid #5c5cff;
+  border-radius: 28px;
+  overflow: visible;
+}
+
+.text-center {
+  text-align: center;
+}
 </style>
