@@ -8,7 +8,7 @@
         <span class="deposit-info__text">Процент: до {{ percentage }}%</span>
       </td>
       <td align="center">
-        <span class="deposit-info__text">Срок: {{ term }}</span>
+        <span class="deposit-info__text">Срок: {{ getPeriod(monthCount) }}</span>
       </td>
       <td align="right">
         <span class="deposit-info__text">Сумма: от {{ separateDigitsInNumber(minDepositSum) }}</span>
@@ -24,6 +24,7 @@
 
 <script>
 import RoundedButton from './RoundedButton.vue'
+import { separateDigitsInNumber, getPeriod } from '../utils'
 
 export default {
   name: 'DepositInfo',
@@ -39,8 +40,8 @@ export default {
       type: Number,
       required: true
     },
-    term: {
-      type: String,
+    monthCount: {
+      type: Number,
       required: true
     },
     minDepositSum: {
@@ -48,9 +49,10 @@ export default {
       required: true
     }
   },
-  methods: {
-    separateDigitsInNumber (number, separator = '.') {
-      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator)
+  setup () {
+    return {
+      separateDigitsInNumber,
+      getPeriod
     }
   }
 }

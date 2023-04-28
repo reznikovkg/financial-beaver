@@ -19,10 +19,8 @@
               </tr>
             </table>
           </nav>
-          <DepositInfo class="deposit-info--spacing" name="Легкий" :percentage="40" term="3 мес"
-            :min-deposit-sum="30000" />
-          <DepositInfo class="deposit-info--spacing" name="Вверх!" :percentage="50" term="3 мес"
-            :min-deposit-sum="50000" />
+          <DepositInfo v-for="deposit in getDeposits" :key="deposit.id" class="deposit-info--spacing" :name="deposit.name"
+            :percentage="deposit.percentage" :monthCount="deposit.monthCount" :min-deposit-sum="deposit.minDepositSum" />
           <span class="noselect reviews-header">Отзывы настоящих клиентов</span>
           <ClientComment class="reviews--spacing" :userPicture="require('../../assets/us_pic_1.png')"
             userName="ИлоН_Макс2008">Я
@@ -62,6 +60,7 @@ import AdCard from './components/AdCard.vue'
 import ClientComment from './components/ClientComment.vue'
 import DepositInfo from './components/DepositInfo.vue'
 import SperLogo from './components/SperLogo.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'SperPage',
@@ -70,6 +69,11 @@ export default {
     ClientComment,
     DepositInfo,
     SperLogo
+  },
+  computed: {
+    ...mapGetters('sperDeposits', [
+      'getDeposits'
+    ])
   }
 }
 </script>
