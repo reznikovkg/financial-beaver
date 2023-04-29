@@ -44,6 +44,16 @@ const routes = [
     path: '/result',
     name: 'result',
     component: () => import(/* webpackChunkName: "ResultPage" */ '../views/Result/ResultPage.vue')
+  },
+  {
+    path: '/license-info-search',
+    name: 'license-info-search',
+    component: () => import(/* webpackChunkName: "LicenseInfoSearchPage" */ '../views/LicenseInformationPage/LicenseSearchPage.vue')
+  },
+  {
+    path: '/license-info',
+    name: 'license-info',
+    component: () => import(/* webpackChunkName: "LicenseInformationPage" */ '../views/LicenseInformationPage/LicenseCheckPage.vue')
   }
 ]
 

@@ -19,6 +19,9 @@
     <p><router-link :to="{ name: 'result' }">
         Result Page
       </router-link></p>
+    <p><router-link :to="{ name: 'license-info-search' }">
+      License Information Page
+    </router-link></p>
   </div>
 </template>
 
