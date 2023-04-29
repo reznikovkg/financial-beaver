@@ -1,54 +1,68 @@
-html, body, .outer-wrapper, #app {
-  height: 100%;
-  margin: 0
-}
-
-.wrapper {
-  margin: 0 20%;
-  padding: 5vmin 0;
-  background: white;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.outer-wrapper {
-  background-color: #e9eaee;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.title {
-  line-height: 48px;
-  font-size: 48px;
-  padding: 0 3vmin;
+.search {
+  font-family: Ubuntu, serif;
+  font-size: 4vmin;
   font-weight: 700;
-  font-family: Ubuntu, serif;
+  line-height: 4vmin;
+  text-align: left;
+  padding: 0 3.5vmin;
 }
 
-.subtitle {
-  font-size: 36px;
-  line-height: 36px;
-  color: #000000;
+.input {
+  box-sizing: border-box;
+  padding: 1vmin 2vmin;
+  width: 100%;
+  outline: none;
+  border-radius: 15px;
+  border-style: solid;
+  margin-top: 20px;
+  border-width: 2px;
+
+  font-family: "Open Sans", serif;
+  font-size: 4vmin;
+  font-weight: 600;
+}
+
+.table {
+  border: none;
+  font-family: "Open Sans", serif;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-size: 1.65vmin;
+
+  & thead {
+    height: 7vmin;
+  }
+
+  & .item {
+    padding: 2vh 0;
+  }
+
+  & tbody {
+    background-color: rgba(92, 98, 115, 0.25);
+
+    & tr {
+      height: auto;
+      border: solid black;
+      border-width: 1px 0;
+    }
+  }
+}
+
+.text--blue {
+  color: rgba(50, 75, 217, 1);
+}
+
+.codes-info {
+  margin: 6vh 7vw;
+  color: #212940;
   opacity: 0.5;
-}
+  font-size: 2vmin;
+  font-family: 'Open Sans', serif;
+  font-style: normal;
+  font-weight: 600;
 
-.buttons-container {
-  margin: auto 20px 0 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.bottom-button {
-  background-color: rgba(92, 98, 115, 0.3);
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  color: rgba(33, 41, 64, 0.75);
-  padding: 20px;
-  font-size: 36px;
-  cursor: pointer;
-  width: 360px;
-  border-radius: 5px;
-  font-family: Ubuntu, serif;
+  & ul {
+    padding: 0 5vh;
+  }
 }

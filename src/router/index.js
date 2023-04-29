@@ -41,9 +41,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "ResultPage" */ '../views/Result/ResultPage.vue')
   },
   {
+    path: '/info-search',
+    name: 'info-search',
+    component: () => import(/* webpackChunkName: "InfoSearchPage" */ '../views/InformationPage/LicenseSearchPage.vue')
+  },
+  {
     path: '/info',
     name: 'info',
-    component: () => import(/* webpackChunkName: "InfoPage" */ '../views/InformationPage/InformationPageWrapper.vue')
+    component: () => import(/* webpackChunkName: "InfoPage" */ '../views/InformationPage/LicenseCheckPage.vue')
   }
 ]
 
