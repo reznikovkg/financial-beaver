@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     onGoMain: () => {
-      router.push('info-search')
+      router.push('license-info-search')
     },
     onGoBack: () => {
       router.back()

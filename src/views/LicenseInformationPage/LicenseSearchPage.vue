@@ -11,7 +11,7 @@
 
 <script>
 
-import LicenseCheckPage from '@/views/InformationPage/components/InformationPageWrapper/LicenseCheckContainer.vue'
+import LicenseCheckPage from '@/views/LicenseInformationPage/components/InformationPageWrapper/LicenseCheckContainer.vue'
 import router from '@/router'
 import { mapActions, mapGetters } from 'vuex'
 
@@ -35,7 +35,7 @@ export default {
       const matchedLicense = this.licenses.find(license => license.regNumber === e.target.value)
       if (matchedLicense) {
         this.selectLicense(matchedLicense)
-        router.push('info')
+        router.push('license-info')
       }
     }
   },

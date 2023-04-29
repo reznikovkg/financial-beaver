@@ -83,7 +83,7 @@
 
 <script>
 
-import LicenseCheckContainer from '@/views/InformationPage/components/InformationPageWrapper/LicenseCheckContainer.vue'
+import LicenseCheckContainer from '@/views/LicenseInformationPage/components/InformationPageWrapper/LicenseCheckContainer.vue'
 import { mapGetters } from 'vuex'
 
 export default {

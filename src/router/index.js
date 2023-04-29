@@ -41,14 +41,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "ResultPage" */ '../views/Result/ResultPage.vue')
   },
   {
-    path: '/info-search',
-    name: 'info-search',
-    component: () => import(/* webpackChunkName: "InfoSearchPage" */ '../views/InformationPage/LicenseSearchPage.vue')
+    path: '/license-info-search',
+    name: 'license-info-search',
+    component: () => import(/* webpackChunkName: "LicenseInfoSearchPage" */ '../views/LicenseInformationPage/LicenseSearchPage.vue')
   },
   {
-    path: '/info',
-    name: 'info',
-    component: () => import(/* webpackChunkName: "InfoPage" */ '../views/InformationPage/LicenseCheckPage.vue')
+    path: '/license-info',
+    name: 'license-info',
+    component: () => import(/* webpackChunkName: "LicenseInformationPage" */ '../views/LicenseInformationPage/LicenseCheckPage.vue')
   }
 ]
 
