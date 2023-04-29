@@ -17,6 +17,6 @@ export default {
 <style lang="less">
 body {
   margin: 0;
-  background-color: rgb(255, 248, 235);
+  background-color: rgb(255, 248, 234);
 }
 </style>

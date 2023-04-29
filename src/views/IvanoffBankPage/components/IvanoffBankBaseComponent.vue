@@ -49,6 +49,7 @@ export default {
 
   &__slot {
     min-height: 100px;
+    margin: 15px;
   }
 
   &__up {
