@@ -26,6 +26,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "btn" */ '../views/SearcherView.vue')
   },
   {
+    path: '/mainsearch',
+    name: 'mainSearch',
+    component: () => import(/* webpackChunkName: "btn" */ '../views/MainSearcherView.vue')
+  },
+  {
     path: '/golden-ring',
     name: 'golden-ring',
     component: () => import(/* webpackChunkName: "golden-ring" */ '../views/GoldenRingBankPage/GoldenRingPage.vue')
