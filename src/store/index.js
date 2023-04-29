@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import depositPreview from './depositPreview'
 import tabsBank from './tabsBank'
+import bankLicenses from './bankLicenses'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -30,6 +31,7 @@ export default new Vuex.Store({
   },
   modules: {
     depositPreview,
-    tabsBank
+    tabsBank,
+    bankLicenses
   }
 })

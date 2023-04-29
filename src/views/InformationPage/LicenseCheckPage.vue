@@ -32,20 +32,19 @@
             1
           </td>
           <td class="item">
-            Б П С
+            {{this.selectedLicense?.code}}
           </td>
           <td class="item">
-            34522
+            {{this.selectedLicense?.regNumber}}
           </td>
           <td class="item">
-            18923678259543
+            {{this.selectedLicense?.govRegNumber}}
           </td>
           <td class="item">
-            ЗАО "Спербанк"
+            {{this.selectedLicense?.name}}
           </td>
           <td class="item">
-            403118, г. Урюпинск,
-            ул. Зои Космодемьянской, д. 14/8
+            {{this.selectedLicense?.address}}
           </td>
           <td />
         </tr>
@@ -85,6 +84,7 @@
 <script>
 
 import LicenseCheckContainer from '@/views/InformationPage/components/InformationPageWrapper/LicenseCheckContainer.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'LicenseCheckPage',
@@ -98,6 +98,12 @@ export default {
   data: function () {
     return {
       text: ''
+    }
+  },
+  computed: {
+    ...mapGetters('bankLicenses', ['getSelectedLicense']),
+    selectedLicense () {
+      return this.getSelectedLicense
     }
   }
 }

@@ -13,6 +13,7 @@
 
 import LicenseCheckPage from '@/views/InformationPage/components/InformationPageWrapper/LicenseCheckContainer.vue'
 import router from '@/router'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'LicenseSearchPage',
@@ -29,10 +30,19 @@ export default {
     }
   },
   methods: {
-    onChange: (e) => {
-      if (e.target.value === '34522') {
+    ...mapActions('bankLicenses', ['selectLicense']),
+    onChange: function (e) {
+      const matchedLicense = this.licenses.find(license => license.regNumber === e.target.value)
+      if (matchedLicense) {
+        this.selectLicense(matchedLicense)
         router.push('info')
       }
+    }
+  },
+  computed: {
+    ...mapGetters('bankLicenses', ['getLicenses']),
+    licenses () {
+      return this.getLicenses
     }
   }
 }
