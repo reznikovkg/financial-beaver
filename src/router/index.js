@@ -26,6 +26,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "btn" */ '../views/SearcherView.vue')
   },
   {
+    path: '/mainsearch',
+    name: 'mainSearch',
+    component: () => import(/* webpackChunkName: "btn" */ '../views/MainSearcherView.vue')
+  },
+  {
     path: '/golden-ring',
     name: 'golden-ring',
     component: () => import(/* webpackChunkName: "golden-ring" */ '../views/GoldenRingBankPage/GoldenRingPage.vue')
@@ -39,6 +44,16 @@ const routes = [
     path: '/result',
     name: 'result',
     component: () => import(/* webpackChunkName: "ResultPage" */ '../views/Result/ResultPage.vue')
+  },
+  {
+    path: '/license-info-search',
+    name: 'license-info-search',
+    component: () => import(/* webpackChunkName: "LicenseInfoSearchPage" */ '../views/LicenseInformationPage/LicenseSearchPage.vue')
+  },
+  {
+    path: '/license-info',
+    name: 'license-info',
+    component: () => import(/* webpackChunkName: "LicenseInformationPage" */ '../views/LicenseInformationPage/LicenseCheckPage.vue')
   },
   {
     path: '/ivanoff',
