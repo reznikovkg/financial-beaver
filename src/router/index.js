@@ -41,6 +41,16 @@ const routes = [
     component: () => import(/* webpackChunkName: "SperPage" */ '../views/Sper/SperPage.vue')
   },
   {
+    path: '/sper-calc',
+    name: 'sper-calc',
+    component: () => import(/* webpackChunkName: "SperCalc" */ '../views/Sper/SperCalc.vue')
+  },
+  {
+    path: '/sper-contract',
+    name: 'sper-contract',
+    component: () => import(/* webpackChunkName: "SperContract" */ '../views/Sper/SperContract.vue')
+  },
+  {
     path: '/result',
     name: 'result',
     component: () => import(/* webpackChunkName: "ResultPage" */ '../views/Result/ResultPage.vue')
