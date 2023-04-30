@@ -4,7 +4,13 @@
 
 <script>
 export default {
-  name: 'WideTopPattern'
+  name: 'WideTopPattern',
+  props: {
+    static: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 

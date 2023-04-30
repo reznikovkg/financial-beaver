@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/golden-ring',
     name: 'golden-ring',
-    component: () => import(/* webpackChunkName: "golden-ring" */ '../views/GoldenRingBankPage/GoldenRingPage.vue')
+    component: () => import(/* webpackChunkName: "golden-ring" */ '@/views/GoldenRingBankPages/GoldenRingPage.vue')
   },
   {
     path: '/sper-page',
@@ -59,6 +59,16 @@ const routes = [
     path: '/ivanoff',
     name: 'ivanoff',
     component: () => import(/* webpackChunkName: "ResultPage" */ '../views/IvanoffBankPage/IvanoffBankPage.vue')
+  },
+  {
+    path: '/golden-ring-deposit',
+    name: 'golden-ring-deposit',
+    component: () => import(/* webpackChunkName: "GoldenRingDeposit" */ '../views/GoldenRingBankPages/GoldenRingDepositPage.vue')
+  },
+  {
+    path: '/golden-ring-contract',
+    name: 'golden-ring-contract',
+    component: () => import(/* webpackChunkName: "GoldenRingDeposit" */ '../views/GoldenRingBankPages/GoldenRingContract.vue')
   }
 ]
 
