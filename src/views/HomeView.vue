@@ -9,9 +9,18 @@
     <p><router-link :to="{ name: 'search' }">
         Search page
       </router-link></p>
+    <p><router-link :to="{ name: 'mainSearch' }">
+        MainSearch
+    </router-link></p>
     <p><button @click="() => openExampleModal()">Открыть модалку</button></p>
     <p><router-link :to="{ name: 'result' }">
         Result Page
+      </router-link></p>
+    <p><router-link :to="{ name: 'license-info-search' }">
+      License Information Page
+    </router-link></p>
+      <p><router-link :to="{ name: 'ivanoff' }">
+        Ivanoff page
       </router-link></p>
   </div>
 </template>

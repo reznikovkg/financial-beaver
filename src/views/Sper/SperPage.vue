@@ -19,7 +19,10 @@
               </tr>
             </table>
           </nav>
-          <DepositInfo v-for="deposit in getDeposits" :key="deposit.id" class="deposit-info--spacing"
+          <DepositInfo
+            v-for="deposit in getDeposits"
+            :key="deposit.id"
+            class="deposit-info--spacing"
             :deposit="deposit" />
           <span class="noselect reviews-header">Отзывы настоящих клиентов</span>
           <ClientComment class="reviews--spacing" :userPicture="require('../../assets/us_pic_1.png')"

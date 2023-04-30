@@ -26,6 +26,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "btn" */ '../views/SearcherView.vue')
   },
   {
+    path: '/mainsearch',
+    name: 'mainSearch',
+    component: () => import(/* webpackChunkName: "btn" */ '../views/MainSearcherView.vue')
+  },
+  {
     path: '/golden-ring',
     name: 'golden-ring',
     component: () => import(/* webpackChunkName: "golden-ring" */ '../views/GoldenRingBankPage/GoldenRingPage.vue')
@@ -38,17 +43,32 @@ const routes = [
   {
     path: '/sper-calc',
     name: 'sper-calc',
-    component: () => import(/* webpackChunkName: "SperPage" */ '../views/Sper/SperCalc.vue')
+    component: () => import(/* webpackChunkName: "SperCalc" */ '../views/Sper/SperCalc.vue')
   },
   {
     path: '/sper-contract',
-    name: 'sper-calc',
-    component: () => import(/* webpackChunkName: "SperPage" */ '../views/Sper/SperContract.vue')
+    name: 'sper-contract',
+    component: () => import(/* webpackChunkName: "SperContract" */ '../views/Sper/SperContract.vue')
   },
   {
     path: '/result',
     name: 'result',
     component: () => import(/* webpackChunkName: "ResultPage" */ '../views/Result/ResultPage.vue')
+  },
+  {
+    path: '/license-info-search',
+    name: 'license-info-search',
+    component: () => import(/* webpackChunkName: "LicenseInfoSearchPage" */ '../views/LicenseInformationPage/LicenseSearchPage.vue')
+  },
+  {
+    path: '/license-info',
+    name: 'license-info',
+    component: () => import(/* webpackChunkName: "LicenseInformationPage" */ '../views/LicenseInformationPage/LicenseCheckPage.vue')
+  },
+  {
+    path: '/ivanoff',
+    name: 'ivanoff',
+    component: () => import(/* webpackChunkName: "ResultPage" */ '../views/IvanoffBankPage/IvanoffBankPage.vue')
   }
 ]
 

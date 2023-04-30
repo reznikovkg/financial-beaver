@@ -41,7 +41,7 @@
         <td class="sper-calc__body__item sper-calc__body__item--cycle-bottom" />
       </tr>
     </table>
-    <router-link :to="{ path: 'sper-contract' }">
+    <router-link :to="{ name: 'sper-contract' }">
       <RoundedButton class="order-button" :buttonShadow="false" borderRadius="15px">
         Оформить
       </RoundedButton>
