@@ -15,18 +15,18 @@
           Ваша ставка
         </td>
         <td align="center" class="sper-calc__body__item sper-calc__body__item--cycle-top">
-          Итог:<br>{{ separateDigitsInNumber(this.minDepositSum + this.calculateIncome, ' ') }}
+          Итог:<br>{{ separateDigitsInNumber(this.deposit.minDepositSum + this.calculateIncome, ' ') }}
         </td>
       </tr>
       <tr>
         <td align="center" class="sper-calc__body__item sper-calc__body__item--cycle">
-          {{ separateDigitsInNumber(this.minDepositSum) }}р
+          {{ separateDigitsInNumber(this.deposit.minDepositSum) }}р
         </td>
         <td align="center" class="sper-calc__body__item sper-calc__body__item--cycle">
-          {{ getPeriod(this.monthCount) }}.
+          {{ getPeriod(this.deposit.monthCount) }}.
         </td>
         <td align="center" class="sper-calc__body__item sper-calc__body__item--cycle">
-          {{ this.percentage }}%
+          {{ this.deposit.percentage }}%
         </td>
         <td align="center" class="sper-calc__body__item">
           Доход:<br>{{ separateDigitsInNumber(this.calculateIncome, ' ') }}
@@ -34,16 +34,18 @@
       </tr>
       <tr>
         <td colspan="3">
-          <RoundedCheckbox v-model="someVariable" id="auto-continue" notActiveColor="#2AB514">
+          <RoundedCheckbox v-model="auto_continue" id="auto-continue" notActiveColor="#2AB514">
             Автоматическое продление
           </RoundedCheckbox>
         </td>
         <td class="sper-calc__body__item sper-calc__body__item--cycle-bottom" />
       </tr>
     </table>
-    <RoundedButton class="order-button" :buttonShadow="false" borderRadius="15px">
-      Оформить
-    </RoundedButton>
+    <router-link :to="{ path: 'sper-contract' }">
+      <RoundedButton class="order-button" :buttonShadow="false" borderRadius="15px">
+        Оформить
+      </RoundedButton>
+    </router-link>
   </div>
 </template>
 
@@ -52,6 +54,7 @@ import SperLogo from './components/SperLogo.vue'
 import RoundedButton from './components/RoundedButton.vue'
 import RoundedCheckbox from './components/RoundedCheckbox.vue'
 import { separateDigitsInNumber, getPeriod } from './utils'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'SperCalc',
@@ -60,24 +63,16 @@ export default {
     RoundedButton,
     RoundedCheckbox
   },
-  props: {
-    minDepositSum: {
-      type: Number,
-      required: true
-    },
-    monthCount: {
-      type: Number,
-      required: true
-    },
-    percentage: {
-      type: Number,
-      required: true
-    }
-  },
   computed: {
+    ...mapGetters('sperDeposits', [
+      'getDeposits'
+    ]),
+    deposit () {
+      return this.getDeposits.find(e => e.id === this.id)
+    },
     calculateIncome () {
-      const monthPerYear = 12
-      return this.minDepositSum * this.percentage / 100 / monthPerYear * this.monthCount
+      const monthsPerYear = 12
+      return this.deposit.minDepositSum * this.deposit.percentage / 100 / monthsPerYear * this.deposit.monthCount
     }
   },
   setup () {
@@ -88,7 +83,8 @@ export default {
   },
   data () {
     return {
-      someVariable: false
+      auto_continue: false,
+      id: +this.$route.query.id
     }
   }
 }

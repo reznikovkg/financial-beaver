@@ -4,15 +4,12 @@
         Btn
       </router-link></p>
     <p><router-link :to="{ name: 'banks' }">
-        banks page
+        Banks page
       </router-link></p>
     <p><router-link :to="{ name: 'search' }">
         Search page
       </router-link></p>
     <p><button @click="() => openExampleModal()">Открыть модалку</button></p>
-    <p><router-link :to="{ name: 'sper-page' }">
-        Sper Page
-      </router-link></p>
     <p><router-link :to="{ name: 'result' }">
         Result Page
       </router-link></p>

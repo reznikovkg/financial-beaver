@@ -2,21 +2,25 @@
   <table class="noselect deposit-info" cellpadding="0" cellspacing="0" width="100%">
     <tr>
       <td align="center">
-        <span class="deposit-info__text">Вклад: "{{ name }}"</span>
+        <span class="deposit-info__text">Вклад: "{{ deposit.name }}"</span>
       </td>
       <td align="center">
-        <span class="deposit-info__text">Процент: до {{ percentage }}%</span>
+        <span class="deposit-info__text">Процент: до {{ deposit.percentage }}%</span>
       </td>
       <td align="center">
-        <span class="deposit-info__text">Срок: {{ getPeriod(monthCount) }}</span>
+        <span class="deposit-info__text">Срок: {{ getPeriod(deposit.monthCount) }}</span>
       </td>
       <td align="right">
-        <span class="deposit-info__text">Сумма: от {{ separateDigitsInNumber(minDepositSum) }}</span>
+        <span class="deposit-info__text">Сумма: от {{ separateDigitsInNumber(deposit.minDepositSum) }}</span>
       </td>
     </tr>
     <tr>
       <td colspan="4" align="right">
-        <RoundedButton class="deposit-info__calculate">Рассчитать доход</RoundedButton>
+        <router-link :to="{ path: 'sper-calc', query: { id: deposit.id } }">
+          <RoundedButton class="deposit-info__calculate">
+            Рассчитать доход
+          </RoundedButton>
+        </router-link>
       </td>
     </tr>
   </table>
@@ -32,21 +36,27 @@ export default {
     RoundedButton
   },
   props: {
-    name: {
-      type: String,
-      required: true
-    },
-    percentage: {
-      type: Number,
-      required: true
-    },
-    monthCount: {
-      type: Number,
-      required: true
-    },
-    minDepositSum: {
-      type: Number,
-      required: true
+    deposit: {
+      id: {
+        type: Number,
+        required: true
+      },
+      name: {
+        type: String,
+        required: true
+      },
+      percentage: {
+        type: Number,
+        required: true
+      },
+      monthCount: {
+        type: Number,
+        required: true
+      },
+      minDepositSum: {
+        type: Number,
+        required: true
+      }
     }
   },
   setup () {
