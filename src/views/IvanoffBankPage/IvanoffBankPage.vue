@@ -2,12 +2,12 @@
   <div class="wrapper">
     <IvanoffBankBaseComponent button-text="Оформить онлайн">
     </IvanoffBankBaseComponent>
+    <IvanoffCalcutionComponent/>
   </div>
 </template>
 
 <script>
 import IvanoffBankBaseComponent from './components/IvanoffBankBaseComponent.vue'
-
 export default {
   name: 'IvanoffBankPage',
   components: { IvanoffBankBaseComponent }
