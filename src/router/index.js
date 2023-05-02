@@ -82,7 +82,7 @@ const routes = [
   },
   {
     path: '/calculation-ivanoff',
-    name: 'calculation-page',
+    name: 'calculation-page-temp',
     component: () => import(/* webpackChunkName: "GoldenRingDeposit" */ '../views/CalculationPage')
   }
 ]

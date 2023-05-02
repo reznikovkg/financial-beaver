@@ -22,6 +22,9 @@
       <p><router-link :to="{ name: 'ivanoff' }">
         Ivanoff page
       </router-link></p>
+      <p><router-link :to="{ name: 'calculation-page-temp' }">
+        Ivanoff calculation component temp page
+      </router-link></p>
   </div>
 </template>
 
