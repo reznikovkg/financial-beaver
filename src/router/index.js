@@ -79,6 +79,11 @@ const routes = [
     path: '/golden-ring-contract',
     name: 'golden-ring-contract',
     component: () => import(/* webpackChunkName: "GoldenRingDeposit" */ '../views/GoldenRingBankPages/GoldenRingContract.vue')
+  },
+  {
+    path: '/calculation-ivanoff',
+    name: 'calculation-page-temp',
+    component: () => import(/* webpackChunkName: "GoldenRingDeposit" */ '../views/CalculationPage')
   }
 ]
 
