@@ -1,0 +1,190 @@
+<template>
+  <div class="ivanoff-cont">
+    <div class="ivanoff-cont__top">
+      <div class="ivanoff-cont__horizontal" style="margin: 30px;">
+        <div class="ivanoff-cont__back-button">
+          <img src="IvanoffBank/Vector.png" alt="arrow">
+        </div>
+        <div style="margin: auto; font-size: xx-large; font-weight: bold;">
+          Вклад "Копилка +"
+        </div>
+      </div>
+      <div class="ivanoff-cont__bet">
+        повышенная ставка на сбережения
+      </div>
+    </div>
+    <div>
+      <div class="ivanoff-cont__horizontal">
+        <div class="ivanoff-cont__info-field" style="width: 150px;">
+          до 7% годовых
+        </div>
+        <div class="ivanoff-cont__info-field" style="width: 150px;">
+          от 100.000₽
+        </div>
+        <div class="ivanoff-cont__info-field" style="width: 150px;">
+          от 3 месяцев
+        </div>
+        <div class="ivanoff-cont__info-field" style="width: 150px;">
+          <div style="margin: auto;">с пополнением</div>
+          <div style="margin: auto;">без снятия</div>
+        </div>
+      </div>
+    </div>
+    <div class="ivanoff-cont__horizontal">
+      <div style="margin: auto;">
+        <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large;">
+          условия вклада
+          <div class="ivanoff-cont__down-button" style="margin-left: auto; margin-right: 0px;">
+            <img src="IvanoffBank/Vector2.png" alt="arrow">
+          </div>
+        </div>
+        <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large;">
+          подробности
+          <div class="ivanoff-cont__down-button" style="margin-left: auto; margin-right: 0px;">
+            <img src="IvanoffBank/Vector2.png" alt="arrow">
+          </div>
+        </div>
+        <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large;">
+          вопросы и ответы
+          <div class="ivanoff-cont__down-button" style="margin-left: auto; margin-right: 0px;">
+            <img src="IvanoffBank/Vector2.png" alt="arrow">
+          </div>
+        </div>
+      </div>
+      <div class="ivanoff-cont__info-field" style="width: 400px; font-weight: bold; font-size: xx-large; height: 215px;">
+        Преимущества вкладов
+        <div class="ivanoff-cont__small-info-field" style="width: 350px; font-size: large;">
+          <img src="IvanoffBank/lock.png" alt="lock">
+          вклад застрахован АСВ
+        </div>
+        <div class="ivanoff-cont__small-info-field" style="width: 350px; font-size: large;">
+          <img src="IvanoffBank/world.png" alt="world">
+          онлайн управление
+        </div>
+        <div class="ivanoff-cont__small-info-field" style="width: 350px; font-size: large;">
+          <img src="IvanoffBank/user-octagon.png" alt="user">
+          персональные условия
+        </div>
+      </div>
+
+    </div>
+    <div class="ivanoff-cont__bottom">
+        <button class="ivanoff-cont__button">Рассчитать доход</button>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'IvanoffBankBaseComponent',
+  props: {
+    buttonText: String
+  }
+}
+</script>
+
+<style scoped lang="less">
+.ivanoff-cont {
+  background: transparent;
+
+  &__bottom {
+    display: flex;
+  }
+
+  &__horizontal {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0px;
+    background: #D97A07E5;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+  }
+
+  &__back-button {
+    background: #D9232380;
+    width: 15px;
+    height: 15px;
+    padding: 10px;
+    border-radius: 50%;
+    border: black solid 2px;
+
+    & img {
+      width: 80%;
+      height: 100%;
+    }
+  }
+
+  &__down-button {
+    background: #D97A0780;
+    width: 10px;
+    height: 10px;
+    padding: 7px;
+    border-radius: 50%;
+    border: black solid 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & img {
+      width: 80%;
+      height: 80%;
+    }
+  }
+
+  &__bet {
+    background: #D97A0726;
+    font-size: x-large;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    text-align: center;
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #260407CC;
+  }
+
+  &__info-field {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 10px 25px 10px 25px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.24);
+    background-color: white;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__small-info-field {
+    margin: auto;
+    padding: 5px;
+    background: #E4E4E4;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    flex-wrap: wrap;
+
+    & img {
+      margin-left: 10px;
+      margin-right: 15px;
+    }
+  }
+}
+</style>

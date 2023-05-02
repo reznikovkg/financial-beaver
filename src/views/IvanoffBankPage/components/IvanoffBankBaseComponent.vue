@@ -45,7 +45,7 @@ export default {
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  background: linear-gradient(rgb(255, 255, 255) 40%, rgb(229, 229, 229) 40%) no-repeat;
+  background: linear-gradient(rgb(255, 255, 255) 42%, rgb(229, 229, 229) 40%) no-repeat;
 
   &__slot {
     min-height: 100px;
