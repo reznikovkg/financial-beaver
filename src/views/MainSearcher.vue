@@ -3,20 +3,15 @@
     <div class="title-container">
       <div class="title__content">
         <div class="search__name">
-          Поисковик
+          <span class="search__name__text">Поисковик</span>
           <span class="search__plus">+</span>
         </div>
         <div class="search-bar">
-          <InputComponent value="Сравнить банки и счета" />
+          <InputComponent :items="items" />
           <div class="search-bar__loupe">
-            <span>&#128269;</span>
+            <span @click="redirectToSearch">&#128269;</span>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="bank-container">
-      <div class="bank__content">
-        <BankTab v-for="(item, index) in tabs" :key="index" :tab="item" />
       </div>
     </div>
   </div>
@@ -24,10 +19,16 @@
 
 <script>
 import InputComponent from '@/components/Input/Input.vue'
-import BankTab from '@/components/BankTab/BankTab.vue'
 import { mapGetters } from 'vuex'
 export default {
   name: 'SearcherView',
+  data () {
+    return {
+      items: [
+        'Сравните счета и банки'
+      ]
+    }
+  },
   computed: {
     ...mapGetters('tabsBank', [
       'getTabs'
@@ -36,7 +37,12 @@ export default {
       return this.getTabs
     }
   },
-  components: { BankTab, InputComponent }
+  methods: {
+    redirectToSearch () {
+      this.$router.push('/search')
+    }
+  },
+  components: { InputComponent }
 }
 </script>
 
@@ -47,37 +53,44 @@ export default {
 .title {
   &-container {
     display: flex;
-    border-bottom: 3px solid gray;
-    margin-top: 40px;
-    padding-bottom: 40px;
     vertical-align: middle;
+    margin-top: 15%;
   }
 
   &__content {
     display: flex;
+    flex-direction: column;
     margin-left: 23%;
   }
 }
 .search {
   &__name {
-    font-size: 40px;
-    font-family: "Yeseva One", cursive;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    &__text{
+      font-size: 100px;
+      font-family: "Yeseva One", cursive;
 
-    &::first-letter {
-      color: blue;
+      &::first-letter {
+        color: blue;
+      }
+      margin-left: 14%;
     }
   }
   &__plus {
-    font-size: 80%;
+    margin-top:2%;
+    font-size: 500%;
   }
 
   &-bar {
     overflow: hidden;
     border: 2px solid #212940;
     border-radius: 40px;
-    margin-left: 90px;
     display: flex;
-    height: auto;
+    height: 6vmax;
+    width: 53rem;
+    align-items: center;
 
     &__text {
       font-family: "Ubuntu", sans-serif;
@@ -88,8 +101,8 @@ export default {
       font-size: 30px;
       line-height: 41px;
       color: #212940;
-      margin-left: 25px;
-      padding-right: 150px;
+      margin-left: 5vmin;
+      padding-right: 40vmin;
     }
 
     &__loupe {
@@ -97,17 +110,14 @@ export default {
       align-items: center;
       border-left: 2px solid gray;
       min-height: 100%;
+      margin-left: 13%;
 
-      span{
-        margin-left: 20px;
-        font-size: 25px;
-        margin-right: 20px;
+      span {
+        margin-left: 70%;
+        font-size: 30px;
       }
     }
   }
 }
-.bank__content {
-  margin-top: 40px;
-  margin-left: 23%;
-}
+
 </style>

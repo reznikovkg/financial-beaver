@@ -1,31 +1,16 @@
 <template>
   <div class="home">
-    <p><router-link :to="{ name: 'btn' }">
-        Btn
-      </router-link></p>
-    <p><router-link :to="{ name: 'banks' }">
-        banks page
-      </router-link></p>
-    <p><router-link :to="{ name: 'search' }">
-        Search page
-      </router-link></p>
-    <p><button @click="() => openBoberModal()">Открыть модалку</button></p>
-    <p><router-link :to="{ name: 'sper-page' }">
-        Sper Page
-      </router-link></p>
-    <p><router-link :to="{ name: 'result' }">
-        Result Page
-      </router-link></p>
+    <MainSearcher />
   </div>
 </template>
 
 <script>
+import MainSearcher from './../components/parts/search/MainSearcher'
+
 export default {
   name: 'HomeView',
-  methods: {
-    openBoberModal () {
-      this.$openBoberModal({ param2: '2' })
-    }
+  components: {
+    MainSearcher
   }
 }
 </script>

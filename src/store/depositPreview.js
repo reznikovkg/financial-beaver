@@ -17,7 +17,7 @@ export default {
         period: 'от 90 дней',
         sum: 'от 100 000',
         isButtonDisabled: false,
-        url: ''
+        url: 'ivanoff'
       },
       {
         bankIcon: 'bankIcons/UBRIR.png',

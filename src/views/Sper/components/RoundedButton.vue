@@ -1,6 +1,6 @@
 <template>
   <button :style="calculateButtonStyles" class="rounded-button">
-    <span :style="calculateTextStyles" class="rounded-button__text">
+    <span :style="calculateTextStyles" class="noselect rounded-button__text">
       <slot>Default button text</slot>
     </span>
   </button>
@@ -21,13 +21,18 @@ export default {
     buttonShadow: {
       type: String,
       default: '0px 4px 4px rgba(0, 0, 0, 0.25)'
+    },
+    borderRadius: {
+      type: String,
+      default: '40px'
     }
   },
   computed: {
     calculateButtonStyles () {
       return {
         background: this.backgroundColor,
-        boxShadow: this.buttonShadow
+        boxShadow: this.buttonShadow,
+        borderRadius: this.borderRadius
       }
     },
     calculateTextStyles () {
@@ -42,7 +47,6 @@ export default {
 <style lang="less">
 .rounded-button {
   border: none;
-  border-radius: 40px;
 
   padding: 0.5vmin 2.75vmin;
 

@@ -11,11 +11,6 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/btn',
-    name: 'btn',
-    component: () => import(/* webpackChunkName: "btn" */ '../views/HomeView.vue')
-  },
-  {
     path: '/banks',
     name: 'banks',
     component: () => import(/* webpackChunkName: "btn" */ '../views/BanksView.vue')
@@ -28,7 +23,7 @@ const routes = [
   {
     path: '/golden-ring',
     name: 'golden-ring',
-    component: () => import(/* webpackChunkName: "golden-ring" */ '../views/GoldenRingBankPage/GoldenRingPage.vue')
+    component: () => import(/* webpackChunkName: "golden-ring" */ '@/views/GoldenRingBankPages/GoldenRingPage.vue')
   },
   {
     path: '/sper-page',
@@ -36,9 +31,49 @@ const routes = [
     component: () => import(/* webpackChunkName: "SperPage" */ '../views/Sper/SperPage.vue')
   },
   {
+    path: '/sper-calc',
+    name: 'sper-calc',
+    component: () => import(/* webpackChunkName: "SperCalc" */ '../views/Sper/SperCalc.vue')
+  },
+  {
+    path: '/sper-contract',
+    name: 'sper-contract',
+    component: () => import(/* webpackChunkName: "SperContract" */ '../views/Sper/SperContract.vue')
+  },
+  {
     path: '/result',
     name: 'result',
     component: () => import(/* webpackChunkName: "ResultPage" */ '../views/Result/ResultPage.vue')
+  },
+  {
+    path: '/license-info-search',
+    name: 'license-info-search',
+    component: () => import(/* webpackChunkName: "LicenseInfoSearchPage" */ '../views/LicenseInformationPage/LicenseSearchPage.vue')
+  },
+  {
+    path: '/license-info',
+    name: 'license-info',
+    component: () => import(/* webpackChunkName: "LicenseInformationPage" */ '../views/LicenseInformationPage/LicenseCheckPage.vue')
+  },
+  {
+    path: '/ivanoff',
+    name: 'ivanoff',
+    component: () => import(/* webpackChunkName: "ResultPage" */ '../views/IvanoffBankPage/IvanoffBankPage.vue')
+  },
+  {
+    path: '/golden-ring-deposit',
+    name: 'golden-ring-deposit',
+    component: () => import(/* webpackChunkName: "GoldenRingDeposit" */ '../views/GoldenRingBankPages/GoldenRingDepositPage.vue')
+  },
+  {
+    path: '/golden-ring-contract',
+    name: 'golden-ring-contract',
+    component: () => import(/* webpackChunkName: "GoldenRingDeposit" */ '../views/GoldenRingBankPages/GoldenRingContract.vue')
+  },
+  {
+    path: '/calculation-ivanoff',
+    name: 'calculation-page-temp',
+    component: () => import(/* webpackChunkName: "GoldenRingDeposit" */ '../views/CalculationPage')
   }
 ]
 

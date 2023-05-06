@@ -27,7 +27,6 @@ export default {
 </script>
 
 <style lang="less">
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
 .client-comment {
   display: flex;

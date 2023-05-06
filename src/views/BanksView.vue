@@ -22,19 +22,9 @@
       </div>
     </div>
     <DepositPreviewComponent
-      v-for="(i, index) in deposits"
+      v-for="(i, index) in getDeposits"
       :key="index"
       :deposit="i"
-
-      :bank-icon="i.bankIcon"
-      :deposit-name="i.depositName"
-      :bank-name="i.bankName"
-      :license-number="i.licenseNumber"
-      :rating="i.rating"
-      :rate="i.rate"
-      :period="i.period"
-      :sum="i.sum"
-      :is-button-disabled="i.isButtonDisabled"
     ></DepositPreviewComponent>
   </div>
 </template>
@@ -49,10 +39,7 @@ export default {
   computed: {
     ...mapGetters('depositPreview', [
       'getDeposits'
-    ]),
-    deposits () {
-      return this.getDeposits
-    }
+    ])
   }
 }
 </script>
