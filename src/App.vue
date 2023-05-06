@@ -84,6 +84,11 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800');
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .noselect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

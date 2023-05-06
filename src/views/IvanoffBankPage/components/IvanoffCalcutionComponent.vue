@@ -17,7 +17,7 @@
           <div class="calculation__deposit">
             <div class="calculation__deposit__content">
               <div style="font-family: 'Inter';font-style: normal;font-size:0.9rem">Сумма вклада</div>
-                <input v-model="value" type="number" class="calculation__deposit__value" style="font-size:1.3rem;background-color: #E4E4E4;border: 0;outline: 0;margin-left:0.8rem;width:auto"/>
+                <input v-model="amount" type="number" class="calculation__deposit__value" style="font-size:1.3rem;background-color: #E4E4E4;border: 0;outline: 0;margin-left:0.8rem;width:auto"/>
               </div>
             <label style="display:flex">
               <input
@@ -77,18 +77,10 @@
 
 <script>
 export default {
-  props: {
-    amount: {
-      type: Number,
-      default: 100000
-    },
-    period: {
-      type: Number,
-      default: 4
-    }
-  },
   data () {
     return {
+      amount: 100000,
+      period: 4,
       rates: [
         { period: '1 мес', rate: '4.50%' },
         { period: '2 мес', rate: '5.00%' },
@@ -102,16 +94,8 @@ export default {
     }
   },
   computed: {
-    value: {
-      get () {
-        return this.amount
-      },
-      set (v) {
-        this.$emit('change', v)
-      }
-    },
     savings () {
-      let saving = this.value
+      let saving = this.amount
       let temp = 0
       const rate = this.rates.filter(item => item.period === '4 мес')[0].rate
       for (let i = this.period; i > 0; i--) {
@@ -121,16 +105,13 @@ export default {
       return saving
     },
     income () {
-      return this.savings - this.value
+      return this.savings - this.amount
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-body{
-  color:white;
-}
 .wrapper {
   width: 100%;
 }
