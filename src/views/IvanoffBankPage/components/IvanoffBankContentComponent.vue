@@ -69,7 +69,7 @@
 
     </div>
     <div class="ivanoff-cont__bottom">
-        <button class="ivanoff-cont__button">Рассчитать доход</button>
+        <button @click='redirectToCalculation' class="ivanoff-cont__button">Рассчитать доход</button>
     </div>
   </div>
 </template>
@@ -79,6 +79,11 @@ export default {
   name: 'IvanoffBankBaseComponent',
   props: {
     buttonText: String
+  },
+  methods: {
+    redirectToCalculation () {
+      this.$router.push('/calculation-ivanoff')
+    }
   }
 }
 </script>
