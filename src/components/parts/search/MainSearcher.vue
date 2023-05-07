@@ -88,8 +88,8 @@ export default {
     border: 2px solid #212940;
     border-radius: 40px;
     display: flex;
-    height: 6vmax;
-    width: 53rem;
+    height: 100px;
+    width: 830px;
     align-items: center;
 
     &__text {
@@ -115,6 +115,9 @@ export default {
       span {
         margin-left: 70%;
         font-size: 30px;
+      }
+      &:hover{
+        cursor:pointer;
       }
     }
   }

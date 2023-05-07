@@ -1,5 +1,5 @@
 <template>
-  <div class="root">
+  <div class="wrapper">
     <div class="title-container">
       <div class="title__content">
         <div class="search__name">
@@ -41,8 +41,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.root {
+.wrapper {
   color: F2F2F;
+  width: 1200px;
+  margin:0 auto;
 }
 .title {
   &-container {
@@ -55,7 +57,6 @@ export default {
 
   &__content {
     display: flex;
-    margin-left: 23%;
   }
 }
 .search {
@@ -103,11 +104,13 @@ export default {
         font-size: 25px;
         margin-right: 20px;
       }
+      &:hover{
+        cursor:pointer;
+      }
     }
   }
 }
 .bank__content {
   margin-top: 40px;
-  margin-left: 23%;
 }
 </style>
