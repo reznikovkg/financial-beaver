@@ -34,7 +34,9 @@
       <div class="buttons-container">
         <button class="button">Рассчитать доход</button>
         <button class="button" @click="() => onOpenDeposit()">Показать договор</button>
-        <button class="button" style="border: solid red 4px">Оформить вклад</button>
+        <router-link :to="{ name: 'result', query: { bank: 'gk' } }">
+          <button class="button" style="border: solid red 4px">Оформить вклад</button>
+        </router-link>
       </div>
     </div>
     <WideBottomPattern/>

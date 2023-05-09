@@ -22,9 +22,11 @@
       <RoundedCheckbox v-model="accept" id="accept" notActiveColor="#2AB514">
         Настоящим подтверждаю что ознакомился с договором
       </RoundedCheckbox>
-      <RoundedButton class="accept-block__order-button" :buttonShadow="false" borderRadius="15px">
+      <router-link class="result__link" :to="{ name: 'result', query: { bank: 'sper' } }">
+        <RoundedButton class="accept-block__order-button" button-shadow="" border-radius="15px">
         Согласен
-      </RoundedButton>
+        </RoundedButton>
+      </router-link>
     </div>
   </div>
 </template>
@@ -49,7 +51,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 
 body {
   background-color: #F2F2F2;
@@ -81,9 +83,15 @@ body {
 .accept-block {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 
   &__order-button {
     margin-left: auto;
   }
 }
+
+.result__link {
+  text-decoration: none;
+}
+
 </style>

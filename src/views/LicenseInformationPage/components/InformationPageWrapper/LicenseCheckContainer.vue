@@ -30,7 +30,7 @@
 </template>
 
 <script>
-
+import { mapGetters } from 'vuex'
 import router from '@/router'
 
 export default {
@@ -45,23 +45,23 @@ export default {
       default: false
     }
   },
+  computed: {
+    ...mapGetters('bankLicenses', [
+      'getSelectedLicense'
+    ])
+  },
   methods: {
-    onGoMain: () => {
-      router.push('license-info-search')
+    onGoMain () {
+      this.$router.push({ name: this.getSelectedLicense.urlName })
     },
-    onGoBack: () => {
+    onGoBack () {
       router.back()
     }
   }
 }
 </script>
 
-<style lang="less">
-html, body, .outer-wrapper, #app {
-  height: 100%;
-  margin: 0
-}
-
+<style lang="less" scoped>
 .wrapper {
   box-sizing: border-box;
   padding: 5vmin 0 3vmin 0;
@@ -70,6 +70,7 @@ html, body, .outer-wrapper, #app {
   display: flex;
   flex-direction: column;
   min-width: 60%;
+  min-height: 100vh;
 }
 
 .outer-wrapper {

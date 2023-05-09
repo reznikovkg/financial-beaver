@@ -1,9 +1,7 @@
 <template>
-  <div class="ivanoff-page">
-    <IvanoffBankBaseComponent button-text="Оформить онлайн">
-      <IvanoffCalcutionComponent/>
-    </IvanoffBankBaseComponent>
-  </div>
+  <IvanoffBankBaseComponent button-text="Оформить онлайн">
+    <IvanoffCalcutionComponent/>
+  </IvanoffBankBaseComponent>
 </template>
 
 <script>
@@ -19,9 +17,4 @@ export default {
 </script>
 
 <style scoped lang="less">
-.ivanoff-page {
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
 </style>

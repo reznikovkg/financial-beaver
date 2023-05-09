@@ -2,10 +2,12 @@
   <div class="wrapper">
     <div class="title-container">
       <div class="title__content">
-        <div class="search__name">
-          Поисковик
-          <span class="search__plus">+</span>
-        </div>
+        <router-link class="search__name__link" :to="{ name: 'home' }">
+          <div class="search__name">
+            Поисковик
+            <span class="search__plus">+</span>
+          </div>
+        </router-link>
         <div class="search-bar">
           <InputComponent value="Сравнить банки и счета" />
           <div class="search-bar__loupe">
@@ -42,10 +44,13 @@ export default {
 
 <style lang="less" scoped>
 .wrapper {
-  color: F2F2F;
+  color: #F2F2F2;
   width: 1200px;
   margin:0 auto;
+  padding: 8px 20px 20px;
+  background-color: #ffffff;
 }
+
 .title {
   &-container {
     display: flex;
@@ -66,6 +71,11 @@ export default {
 
     &::first-letter {
       color: blue;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: #212940;
     }
   }
   &__plus {

@@ -8,11 +8,28 @@ export default {
   state: {
     licenses: [
       {
-        code: 'Б П С',
-        regNumber: '34522',
+        code: 'отз.',
+        regNumber: '139428',
         govRegNumber: '18923678259543',
         name: 'ЗАО "Спербанк"',
-        address: '403118, г. Урюпинск, ул. Зои Космодемьянской, д. 14/8 '
+        address: '403118, г. Урюпинск, ул. Зои Космодемьянской, д. 14/8 ',
+        urlName: 'sper-page'
+      },
+      {
+        code: 'Б П С',
+        regNumber: '923045',
+        govRegNumber: '18923678259543',
+        name: 'ЗАО "Золотое кольцо РФ"',
+        address: '152025, г. Переславль-Залесский, проспект Мира, д. 177 ',
+        urlName: 'golden-ring'
+      },
+      {
+        code: 'Б П С',
+        regNumber: '014889',
+        govRegNumber: '18923678259543',
+        name: 'Ivanoff РФ (АО)',
+        address: '117420, г. Москва, ул. Пушкина, д. 15 ',
+        urlName: 'ivanoff'
       }
     ],
     selectedLicense: null

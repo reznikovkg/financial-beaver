@@ -63,6 +63,7 @@ export default {
   position: relative;
   margin-right: 1rem;
   padding-left: 1.75rem;
+  padding-top: 6px;
 
   &__mark {
     position: absolute;
