@@ -22,7 +22,7 @@
       <RoundedCheckbox v-model="accept" id="accept" notActiveColor="#2AB514">
         Настоящим подтверждаю что ознакомился с договором
       </RoundedCheckbox>
-      <RoundedButton class="accept-block__order-button" :buttonShadow="false" borderRadius="15px">
+      <RoundedButton class="accept-block__order-button" buttonShadow="" borderRadius="15px">
         Согласен
       </RoundedButton>
     </div>

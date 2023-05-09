@@ -5,14 +5,14 @@
     <span class="noselect sper-calc__header">Калькулятор:</span>
     <table class="sper-calc__body" cellpadding="0" cellspacing="0" width="100%">
       <tr>
-        <td width="15%" align="center" class="noselect sper-calc__body__header">
-          Сумма вклада
+        <td width="20%" align="center" class="noselect sper-calc__body__header">
+          Сумма вклада (руб.)
         </td>
-        <td width="15%" align="center" class="noselect sper-calc__body__header">
-          Срок
+        <td width="20%" align="center" class="noselect sper-calc__body__header">
+          Срок (мес.)
         </td>
-        <td width="15%" align="center" class="noselect sper-calc__body__header">
-          Ваша ставка
+        <td width="20%" align="center" class="noselect sper-calc__body__header">
+          Ваша ставка (%)
         </td>
         <td align="center" class="sper-calc__body__item sper-calc__body__item--cycle-top">
           Итог:<br>{{ separateDigitsInNumber(this.deposit.minDepositSum + this.calculateIncome, ' ') }}
@@ -20,13 +20,13 @@
       </tr>
       <tr>
         <td align="center" class="sper-calc__body__item sper-calc__body__item--cycle">
-          {{ separateDigitsInNumber(this.deposit.minDepositSum) }}р
+          <RoundedTextInput v-model="minDepositSum" id="minDepositSum" />
         </td>
         <td align="center" class="sper-calc__body__item sper-calc__body__item--cycle">
-          {{ getPeriod(this.deposit.monthCount) }}.
+          {{ this.deposit.monthCount }}
         </td>
         <td align="center" class="sper-calc__body__item sper-calc__body__item--cycle">
-          {{ this.deposit.percentage }}%
+          {{ this.deposit.percentage }}
         </td>
         <td align="center" class="sper-calc__body__item">
           Доход:<br>{{ separateDigitsInNumber(this.calculateIncome, ' ') }}
@@ -42,7 +42,7 @@
       </tr>
     </table>
     <router-link :to="{ name: 'sper-contract' }">
-      <RoundedButton class="order-button" :buttonShadow="false" borderRadius="15px">
+      <RoundedButton class="order-button" buttonShadow="" borderRadius="15px">
         Оформить
       </RoundedButton>
     </router-link>
@@ -52,8 +52,9 @@
 <script>
 import SperLogo from './components/SperLogo.vue'
 import RoundedButton from './components/RoundedButton.vue'
+import RoundedTextInput from './components/RoundedTextInput.vue'
 import RoundedCheckbox from './components/RoundedCheckbox.vue'
-import { separateDigitsInNumber, getPeriod } from './utils'
+import { separateDigitsInNumber } from './utils'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -61,6 +62,7 @@ export default {
   components: {
     SperLogo,
     RoundedButton,
+    RoundedTextInput,
     RoundedCheckbox
   },
   computed: {
@@ -73,12 +75,22 @@ export default {
     calculateIncome () {
       const monthsPerYear = 12
       return this.deposit.minDepositSum * this.deposit.percentage / 100 / monthsPerYear * this.deposit.monthCount
+    },
+    minDepositSum: {
+      get () {
+        return this.deposit.minDepositSum.toString()
+      },
+      set (value) {
+        const parsedValue = parseInt(value, 10)
+        this.deposit.minDepositSum = !isNaN(parsedValue)
+          ? parsedValue
+          : this.deposit.minDepositSum
+      }
     }
   },
   setup () {
     return {
-      separateDigitsInNumber,
-      getPeriod
+      separateDigitsInNumber
     }
   },
   data () {
