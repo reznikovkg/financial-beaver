@@ -82,13 +82,9 @@ export default {
 </script>
 
 <style lang="less">
-
-body {
-  background-color: #F2F2F2;
-}
-
 .sper-page {
   padding: 8vmin 4vmin;
+  background-color: #F2F2F2;
 }
 
 .content {

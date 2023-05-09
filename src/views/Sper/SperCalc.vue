@@ -91,12 +91,10 @@ export default {
 </script>
 
 <style lang="less">
-body {
-  background-color: #F2F2F2;
-}
-
 .sper-calc {
   padding: 5vmin;
+  background-color: #F2F2F2;
+  height: 100%;
 
   &__border {
     padding-top: 2vmin;

@@ -50,13 +50,9 @@ export default {
 </script>
 
 <style lang="less">
-
-body {
-  background-color: #F2F2F2;
-}
-
 .sper-contract {
   padding: 5vmin;
+  background-color: #F2F2F2;
 
   &__border {
     padding-top: 2vmin;

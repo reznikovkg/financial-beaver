@@ -84,9 +84,11 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800');
 
-body {
+html, body, #app {
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .noselect {
