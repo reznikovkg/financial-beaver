@@ -34,7 +34,9 @@
       <div class="buttons-container">
         <button class="button">Рассчитать доход</button>
         <button class="button" @click="() => onOpenDeposit()">Показать договор</button>
-        <button class="button" style="border: solid red 4px">Оформить вклад</button>
+        <router-link :to="{ name: 'result', query: { bank: 'gk' } }">
+          <button class="button" style="border: solid red 4px">Оформить вклад</button>
+        </router-link>
       </div>
     </div>
     <WideBottomPattern/>
@@ -59,7 +61,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import "styles/styles.less";
 
 .content {

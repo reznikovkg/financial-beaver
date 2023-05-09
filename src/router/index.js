@@ -11,11 +11,6 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/btn',
-    name: 'btn',
-    component: () => import(/* webpackChunkName: "btn" */ '../views/HomeView.vue')
-  },
-  {
     path: '/banks',
     name: 'banks',
     component: () => import(/* webpackChunkName: "btn" */ '../views/BanksView.vue')
@@ -24,11 +19,6 @@ const routes = [
     path: '/search',
     name: 'search',
     component: () => import(/* webpackChunkName: "btn" */ '../views/SearcherView.vue')
-  },
-  {
-    path: '/mainsearch',
-    name: 'mainSearch',
-    component: () => import(/* webpackChunkName: "btn" */ '../views/MainSearcherView.vue')
   },
   {
     path: '/golden-ring',
@@ -83,7 +73,7 @@ const routes = [
   {
     path: '/calculation-ivanoff',
     name: 'calculation-page-temp',
-    component: () => import(/* webpackChunkName: "GoldenRingDeposit" */ '../views/CalculationPage')
+    component: () => import(/* webpackChunkName: "GoldenRingDeposit" */ '../views/IvanoffBankPage/CalculationPage')
   }
 ]
 

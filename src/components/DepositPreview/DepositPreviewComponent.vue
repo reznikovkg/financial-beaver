@@ -2,34 +2,34 @@
   <div>
     <ul class="deposit-preview">
       <li style="width: 12%;">
-        <img :src="bankIcon" alt="BankIcon" class="deposit-preview__image" />
+        <img :src="deposit.bankIcon" alt="BankIcon" class="deposit-preview__image" />
       </li>
       <li style="width: 40%;" class="deposit-preview__block">
-        <div style="font-size: xx-large; font-weight: bold;">{{ depositName }}</div>
+        <div style="font-size: xx-large; font-weight: bold;">{{ deposit.depositName }}</div>
         <div class="deposit-preview__flex">
-          <div style="opacity: 75%; font-weight: bold; font-size: x-large;">{{ bankName }}</div>
-          <div style="opacity: 75%;">лиц. №{{ licenseNumber }}</div>
-          <div style="opacity: 50%;">★ {{ rating }}</div>
+          <div style="opacity: 75%; font-weight: bold; font-size: x-large;">{{ deposit.bankName }}</div>
+          <div style="opacity: 75%;">лиц. №{{ deposit.licenseNumber }}</div>
+          <div style="opacity: 50%;">★ {{ deposit.rating }}</div>
         </div>
       </li>
       <li class="deposit-preview__block" style="width: 8%;">
         <div style="font-weight: bold;">Ставка</div>
-        <div style="font-size: medium;">До {{ rate }}%</div>
+        <div style="font-size: medium;">До {{ deposit.rate }}%</div>
       </li>
       <li class="deposit-preview__block" style="width: 10%;">
         <div style="font-weight: bold;">Срок</div>
-        <div style="font-size: medium;">{{ period }}</div>
+        <div style="font-size: medium;">{{ deposit.period }}</div>
       </li>
       <li class="deposit-preview__block" style="width: 10%;">
         <div style="font-weight: bold;">Сумма</div>
-        <div style="font-size: medium;">{{ sum }}₽</div>
+        <div style="font-size: medium;">{{ deposit.sum }}₽</div>
       </li>
       <li>
         <router-link :to="{ name: deposit.url }">
           <button
             style="font-size: x-large; font-weight: bold;"
             class="deposit-preview__button"
-            :disabled="isButtonDisabled"
+            :disabled="deposit.isButtonDisabled"
           >
             Выбрать
           </button>
@@ -43,22 +43,7 @@
 export default {
   name: 'DepositPreview',
   props: {
-    deposit: Object,
-    bankIcon: String,
-    depositName: String,
-    bankName: String,
-    licenseNumber: String,
-    rating: Number,
-    rate: Number,
-    period: String,
-    sum: String,
-    isButtonDisabled: Boolean
-  },
-  data () {
-    return {
-    }
-  },
-  methods: {
+    deposit: Object
   }
 }
 </script>

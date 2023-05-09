@@ -59,12 +59,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
-
 .rounded-checkbox {
   position: relative;
   margin-right: 1rem;
   padding-left: 1.75rem;
+  padding-top: 6px;
 
   &__mark {
     position: absolute;

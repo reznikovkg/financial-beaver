@@ -47,23 +47,19 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 
-.root {
-  color: F2F2F;
-}
 .title {
   &-container {
     display: flex;
-    vertical-align: middle;
-    margin-top: 15%;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    margin-left: 23%;
   }
 }
 .search {
@@ -71,6 +67,7 @@ export default {
     padding-bottom: 3%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     &__text{
       font-size: 100px;
       font-family: "Yeseva One", cursive;
@@ -78,7 +75,7 @@ export default {
       &::first-letter {
         color: blue;
       }
-      margin-left: 14%;
+      margin-left: 4%;
     }
   }
   &__plus {
@@ -91,8 +88,8 @@ export default {
     border: 2px solid #212940;
     border-radius: 40px;
     display: flex;
-    height: 6vmax;
-    width: 53rem;
+    height: 100px;
+    width: 830px;
     align-items: center;
 
     &__text {
@@ -113,11 +110,14 @@ export default {
       align-items: center;
       border-left: 2px solid gray;
       min-height: 100%;
-      margin-left: 13%;
+      margin-left: 8%;
 
       span {
         margin-left: 70%;
         font-size: 30px;
+      }
+      &:hover{
+        cursor:pointer;
       }
     }
   }

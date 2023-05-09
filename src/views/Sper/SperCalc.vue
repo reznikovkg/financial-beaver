@@ -41,11 +41,9 @@
         <td class="sper-calc__body__item sper-calc__body__item--cycle-bottom" />
       </tr>
     </table>
-    <router-link :to="{ name: 'sper-contract' }">
-      <RoundedButton class="order-button" :buttonShadow="false" borderRadius="15px">
-        Оформить
-      </RoundedButton>
-    </router-link>
+    <RoundedButton @click="() => openAdv()" class="order-button" button-shadow="" border-radius="15px">
+      Оформить
+    </RoundedButton>
   </div>
 </template>
 
@@ -84,19 +82,26 @@ export default {
   data () {
     return {
       auto_continue: false,
-      id: +this.$route.query.id
+      id: +this.$route.query.id,
+      isShowAdv: false
+    }
+  },
+  methods: {
+    openAdv () {
+      console.log(1)
+      if (!this.isShowAdv) {
+        this.isShowAdv = true
+        this.$openAdvertisingModal({ param2: '2' })
+        return 1
+      }
+
+      this.$router.push({ name: 'sper-contract' })
     }
   }
 }
 </script>
 
-<style lang="less">
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
-
-body {
-  background-color: #F2F2F2;
-}
-
+<style lang="less" scoped>
 .sper-calc {
   padding: 5vmin;
 

@@ -19,8 +19,7 @@ export default {
 }
 </script>
 
-<style lang="less">
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800');
+<style lang="less" scoped>
 
 .ad-card-holder {
   box-sizing: border-box;

@@ -1,8 +1,8 @@
 <template>
   <div class="ivanoffcalc-container">
     <div class="title-container">
-      <div class="title-circle">
-        <img src="IvanoffBank/back.jpg">
+      <div class="title__back-button" @click="redirectToIvanoff">
+        <img src="IvanoffBank/Vector.png" alt="arrow">
       </div>
       <div class="title__content">
         <div class="title__text">Рассчитаем ваш доход</div>
@@ -17,7 +17,7 @@
           <div class="calculation__deposit">
             <div class="calculation__deposit__content">
               <div style="font-family: 'Inter';font-style: normal;font-size:0.9rem">Сумма вклада</div>
-                <input v-model="value" type="number" class="calculation__deposit__value" style="font-size:1.3rem;background-color: #E4E4E4;border: 0;outline: 0;margin-left:0.8rem;width:auto"/>
+                <input v-model="amount" type="number" class="calculation__deposit__value" style="font-size:1.3rem;background-color: #E4E4E4;border: 0;outline: 0;margin-left:0.8rem;width:auto;margin-top:4px"/>
               </div>
             <label style="display:flex">
               <input
@@ -30,7 +30,9 @@
           <div class="calculation__period">
             <div class="calculation__period__content">
               <div style="font-family: 'Inter';font-style: normal;font-size:0.9rem">На срок</div>
-              <div class="calculation__period__value" style="font-size:1.3rem">4 месяца</div>
+              <div class="calculation__period__value" style="font-size:1.3rem">
+                <InputComponent :items="items" :styles="options" value="4 мес" />
+              </div>
             </div>
             <label style="display:flex">
               <input
@@ -43,13 +45,13 @@
         </div>
         <div class="calculation__savings">
           <div class="calculation__savings__values">
-            <div style="font-family: 'Inter';font-style: normal;font-size:0.8rem">Cбережения за 4 месяца</div>
+            <div style="font-family: 'Inter';font-style: normal;font-size:0.8rem">Cбережения за {{ period }} </div>
             <div style="font-family: 'Inter';font-size:1.6rem;margin-top:0.2rem;font-weight:600">{{savings}} ₽</div>
           </div>
           <div class="calculation__savings-additional">
             <div class="calculation__savings-additional-rate">
               <div style="font-size:0.8rem">Ставка</div>
-              <div style="font-family: 'Inter';font-size:1.2rem;font-weight:600">6.0</div>
+              <div style="font-family: 'Inter';font-size:1.2rem;font-weight:600">{{ rate }}</div>
             </div>
             <div class="calculation__savings-additional-income">
               <div style="font-size:0.8rem">Доход по вкладу</div>
@@ -76,19 +78,14 @@
 </template>
 
 <script>
+import InputComponent from '@/components/Input/Input.vue'
 export default {
-  props: {
-    amount: {
-      type: Number,
-      default: 100000
-    },
-    period: {
-      type: Number,
-      default: 4
-    }
-  },
+  components: { InputComponent },
   data () {
     return {
+      amount: 100000,
+      period: '4 мес',
+      rate: '6.00%',
       rates: [
         { period: '1 мес', rate: '4.50%' },
         { period: '2 мес', rate: '5.00%' },
@@ -98,40 +95,54 @@ export default {
         { period: '18 мес', rate: '6.70%' },
         { period: '24 мес', rate: '6.80%' },
         { period: '36 мес', rate: '7.00%' }
-      ]
+      ],
+      items: [
+        '1 мес',
+        '2 мес',
+        '4 мес',
+        '7 мес',
+        '12 мес',
+        '18 мес',
+        '24 мес',
+        '36 мес'
+      ],
+      options: {
+        'font-size': '1.3rem',
+        'background-color': 'rgb(228, 228, 228)',
+        border: '0px',
+        outline: '0px',
+        'margin-left': '-18px',
+        width: '200px'
+      }
     }
   },
   computed: {
-    value: {
-      get () {
-        return this.amount
-      },
-      set (v) {
-        this.$emit('change', v)
-      }
-    },
     savings () {
-      let saving = this.value
-      let temp = 0
-      const rate = this.rates.filter(item => item.period === '4 мес')[0].rate
-      for (let i = this.period; i > 0; i--) {
-        temp = saving / 100 * (rate.substring(0, rate.length - 1)) / 12
-        saving += Math.ceil(temp)
-      }
-      return saving
+      const saving = this.amount
+      const intRate = (+(this.rate.substring(0, 3)))
+      const intPeriod = (+(this.period.slice(0, -3)) * 30)
+      const temp = (saving * intRate * intPeriod) / 365
+      return (+(saving) + +Math.ceil(temp / 100))
     },
     income () {
-      return this.savings - this.value
+      return this.savings - this.amount
+    }
+  },
+  mounted () {
+    this.$root.$on('clickedItem', v => {
+      this.period = v
+      this.rate = this.rates.find((item) => item.period === v).rate
+    })
+  },
+  methods: {
+    redirectToIvanoff () {
+      this.$router.push('/ivanoff')
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Yeseva+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300&family=Jost:wght@600&family=Yeseva+One&display=swap');body{
-  color:white;
-}
 .wrapper {
   width: 100%;
 }
@@ -144,8 +155,9 @@ export default {
     background-color:white;
     height: 8rem;
   }
+
   &__text {
-    margin-left: 5vmin;
+    margin-left: 10px;
     font-size: 2.3rem;
     font-family: "Jost";
     font-style: normal;
@@ -153,8 +165,9 @@ export default {
     color:#260407;
     margin-top:2rem;
   }
+
   &__subtext {
-    margin-left: 5vmin;
+    margin-left: 10px;
     font-size: 1.1rem;
     font-family: "Jost";
     font-style: normal;
@@ -162,8 +175,21 @@ export default {
     color:#260407BF;
     padding-bottom: 1rem;
   }
-  &-circle{
-    margin-left: 1.6rem;
+
+  &__back-button{
+    margin:30px;
+    background: #D9232380;
+    width: 15px;
+    height: 15px;
+    padding: 10px;
+    border-radius: 50%;
+    border: black solid 2px;
+    cursor: pointer;
+
+    & img {
+      width: 80%;
+      height: 100%;
+    }
   }
 }
 
@@ -259,7 +285,7 @@ export default {
         margin-left:1rem;
       }
       div:first-child{
-        margin-top:0.5rem;
+        margin-top:0.3rem;
       }
     }
   }

@@ -95,13 +95,15 @@ export default {
       default: 'Результаты поиска:'
     }
   },
-  data: function () {
+  data () {
     return {
       text: ''
     }
   },
   computed: {
-    ...mapGetters('bankLicenses', ['getSelectedLicense']),
+    ...mapGetters('bankLicenses', [
+      'getSelectedLicense'
+    ]),
     selectedLicense () {
       return this.getSelectedLicense
     }
@@ -109,10 +111,7 @@ export default {
 }
 </script>
 
-<style lang="less">
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@600&family=Ubuntu:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@700&family=Ubuntu:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@700&display=swap');
+<style lang="less" scoped>
 
 @import "styles/styles.less";
 </style>

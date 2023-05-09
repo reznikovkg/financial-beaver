@@ -1,11 +1,13 @@
 <template>
-  <div class="root">
+  <div class="wrapper">
     <div class="title-container">
       <div class="title__content">
-        <div class="search__name">
-          Поисковик
-          <span class="search__plus">+</span>
-        </div>
+        <router-link class="search__name__link" :to="{ name: 'home' }">
+          <div class="search__name">
+            Поисковик
+            <span class="search__plus">+</span>
+          </div>
+        </router-link>
         <div class="search-bar">
           <InputComponent value="Сравнить банки и счета" />
           <div class="search-bar__loupe">
@@ -41,12 +43,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
-
-.root {
-  color: F2F2F;
+.wrapper {
+  color: #F2F2F2;
+  width: 1200px;
+  margin:0 auto;
+  padding: 8px 20px 20px;
+  background-color: #ffffff;
 }
+
 .title {
   &-container {
     display: flex;
@@ -58,7 +62,6 @@ export default {
 
   &__content {
     display: flex;
-    margin-left: 23%;
   }
 }
 .search {
@@ -68,6 +71,11 @@ export default {
 
     &::first-letter {
       color: blue;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: #212940;
     }
   }
   &__plus {
@@ -106,11 +114,13 @@ export default {
         font-size: 25px;
         margin-right: 20px;
       }
+      &:hover{
+        cursor:pointer;
+      }
     }
   }
 }
 .bank__content {
   margin-top: 40px;
-  margin-left: 23%;
 }
 </style>

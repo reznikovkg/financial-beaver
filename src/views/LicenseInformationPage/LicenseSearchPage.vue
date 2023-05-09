@@ -31,8 +31,8 @@ export default {
   },
   methods: {
     ...mapActions('bankLicenses', ['selectLicense']),
-    onChange: function (e) {
-      const matchedLicense = this.licenses.find(license => license.regNumber === e.target.value)
+    onChange: function () {
+      const matchedLicense = this.licenses.find(license => license.regNumber === this.text)
       if (matchedLicense) {
         this.selectLicense(matchedLicense)
         router.push('license-info')
@@ -48,9 +48,7 @@ export default {
 }
 </script>
 
-<style lang="less">
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@600&family=Ubuntu:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu:wght@700&display=swap');
+<style lang="less" scoped>
 
 @import "styles/styles.less";
 </style>

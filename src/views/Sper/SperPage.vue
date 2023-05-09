@@ -77,12 +77,14 @@ export default {
     ...mapGetters('sperDeposits', [
       'getDeposits'
     ])
+  },
+  mounted () {
+    this.$openBoberModal({ param2: '2' })
   }
 }
 </script>
 
-<style lang="less">
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+<style lang="less" scoped>
 
 body {
   background-color: #F2F2F2;

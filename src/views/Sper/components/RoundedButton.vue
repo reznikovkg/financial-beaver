@@ -1,5 +1,5 @@
 <template>
-  <button :style="calculateButtonStyles" class="rounded-button">
+  <button @click="() => $emit('click')" :style="calculateButtonStyles" class="rounded-button">
     <span :style="calculateTextStyles" class="noselect rounded-button__text">
       <slot>Default button text</slot>
     </span>
@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .rounded-button {
   border: none;
 

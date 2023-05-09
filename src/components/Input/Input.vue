@@ -1,8 +1,8 @@
 <template>
   <div>
-  <input v-model="str" class="inp" :placeholder="placeholder" @click="inputClicked" />
+  <input v-model="str" :class="inputClass" :placeholder="placeholder" @click="inputClicked" :style="inputStyles"/>
   <Transition name="slide-fade">
-    <div v-if="isOpen" class="dropdown-inner">
+    <div v-if="isOpen" :class="dropdownClass" :style="dropdownStyles">
       <div v-for="(item, index) in items"
            :key="index"
            class="item"
@@ -27,15 +27,19 @@ export default {
   props: {
     placeholder: {
       type: String,
-      default: 'Enter...'
+      default: 'Введите текст...'
     },
     value: {
       type: String,
       default: ''
     },
     items: {
-      type: [],
-      default: []
+      type: Array,
+      default: () => ([])
+    },
+    styles: {
+      type: Array,
+      default: () => ([])
     }
   },
   data () {
@@ -47,11 +51,35 @@ export default {
   computed: {
     str: {
       get () {
-        return this.selectedItem ?? this.value
+        if (this.selectedItem === '') {
+          return this.value
+        } else {
+          return this.selectedItem
+        }
       },
       set (v) {
         this.$emit('change', v)
       }
+    },
+    inputClass () {
+      const { styles } = this
+      if (styles.length === 0) return 'inp'
+      else return '0'
+    },
+    dropdownClass () {
+      const styles = this.styles
+      if (styles.length > 0) return ''
+      else return 'dropdown-inner'
+    },
+    inputStyles () {
+      const { styles } = this
+      if (styles.length === 0) return ''
+      else return styles
+    },
+    dropdownStyles () {
+      const { styles } = this
+      if (styles.length === 0) return ''
+      else return styles
     }
   },
   methods: {
@@ -63,12 +91,13 @@ export default {
     itemPicked (item) {
       this.isOpen = false
       this.selectedItem = item
+      this.$root.$emit('clickedItem', item)
     }
   }
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .inp {
   border: 0;
   outline: 0;
@@ -112,8 +141,8 @@ input:focus{
   flex-direction: column;
 
   &-inner{
-    margin-top:2%;
-    width: 53rem;
+    margin-top:30px;
+    width: 830px;
     height: auto;
     position: absolute;
     z-index: 999999;
