@@ -8,7 +8,7 @@
             <table cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td align="left">
-                  <span class="page-navbar__text">Вклады</span>
+                  <span class="page-navbar__text"><u>Вклады</u></span>
                 </td>
                 <td align="center">
                   <span class="page-navbar__text">Накопительные счета</span>
@@ -24,7 +24,7 @@
             :key="deposit.id"
             class="deposit-info--spacing"
             :deposit="deposit" />
-          <span class="noselect reviews-header">Отзывы настоящих клиентов</span>
+          <span class="noselect reviews-header">Отзывы <u>настоящих</u> клиентов</span>
           <ClientComment class="reviews--spacing" :userPicture="require('../../assets/us_pic_1.png')"
             userName="ИлоН_Макс2008">Я
             вложил свои деньги в этот
