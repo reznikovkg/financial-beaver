@@ -34,11 +34,12 @@ export default {
       default: ''
     },
     items: {
-      type: [],
-      default: []
+      type: Array,
+      default: () => ([])
     },
     styles: {
-      default: []
+      type: Array,
+      default: () => ([])
     }
   },
   data () {
@@ -96,7 +97,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .inp {
   border: 0;
   outline: 0;
@@ -141,7 +142,7 @@ input:focus{
 
   &-inner{
     margin-top:30px;
-    width: 53rem;
+    width: 830px;
     height: auto;
     position: absolute;
     z-index: 999999;

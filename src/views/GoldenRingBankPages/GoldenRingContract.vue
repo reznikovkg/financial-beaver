@@ -38,7 +38,9 @@
       3.1 Банк обязуется открыть счёт для хранения депозита, обеспечить сохранность депозита и выплачивать доход в
       соответствии с договором
     </p>
-    <button class="button" style="margin: 5vmin auto">Я согласен с условиями</button>
+    <router-link class="button__link" :to="{ name: 'result' }">
+      <button class="button" style="margin: 5vmin auto">Я согласен с условиями</button>
+    </router-link>
   </div>
 </template>
 
@@ -86,5 +88,10 @@ export default {
   width: 50vmin;
   height: 8vmin;
   cursor: pointer;
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+  }
 }
 </style>

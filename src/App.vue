@@ -20,18 +20,13 @@
           </router-link>
         </p>
         <p>
+          <router-link :to="{ name: 'golden-ring' }">
+            Golden Page
+          </router-link>
+        </p>
+        <p>
           <router-link :to="{ name: 'sper-page' }">
             Sper Page
-          </router-link>
-        </p>
-        <p>
-          <router-link :to="{ name: 'result' }">
-            Result Page
-          </router-link>
-        </p>
-        <p>
-          <router-link :to="{ name: 'license-info-search' }">
-            License Information Page
           </router-link>
         </p>
         <p>
@@ -40,12 +35,23 @@
           </router-link>
         </p>
         <p>
-          <router-link :to="{ name: 'calculation-page-temp' }">
-            Ivanoff calculation component temp page
+          <router-link :to="{ name: 'license-info-search' }">
+            License Information Page
           </router-link>
         </p>
         <p>
-          <button @click="() => openBoberModal()">Открыть модалку</button>
+          <router-link :to="{ name: 'result' }">
+            Result Page
+          </router-link>
+        </p>
+        <p>
+          <button @click="() => openBoberModal()">Открыть предупреждение</button>
+        </p>
+        <p>
+          <button @click="() => openGoalsModal()">Открыть цели</button>
+        </p>
+        <p>
+          <button @click="() => openAdvertisingModal()">Открыть модалку рекламы</button>
         </p>
         <button @click="showPanel = false">Скрыть</button>
       </div>
@@ -64,6 +70,12 @@ export default {
   methods: {
     openBoberModal () {
       this.$openBoberModal({ param2: '2' })
+    },
+    openGoalsModal () {
+      this.$openGoalsModal({ param2: '2' })
+    },
+    openAdvertisingModal () {
+      this.$openAdvertisingModal({ param2: '2' })
     }
   }
 }
@@ -74,7 +86,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600;700&family=Yeseva+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300&family=Jost:wght@600&family=Yeseva+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@600&family=Ubuntu:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@700&family=Ubuntu:wght@700&display=swap');
@@ -104,6 +116,12 @@ html, body, #app {
   border: 3px solid #5c5cff;
   border-radius: 28px;
   overflow: visible;
+}
+
+.modal-adv .vm--modal {
+  border-radius: 28px;
+  overflow: visible;
+  background-color: #5b6172;
 }
 
 .text-center {

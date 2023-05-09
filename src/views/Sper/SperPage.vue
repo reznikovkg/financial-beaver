@@ -77,11 +77,14 @@ export default {
     ...mapGetters('sperDeposits', [
       'getDeposits'
     ])
+  },
+  mounted () {
+    this.$openBoberModal({ param2: '2' })
   }
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .sper-page {
   padding: 8vmin 4vmin;
   background-color: #F2F2F2;

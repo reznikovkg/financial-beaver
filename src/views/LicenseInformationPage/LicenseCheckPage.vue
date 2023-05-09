@@ -95,13 +95,15 @@ export default {
       default: 'Результаты поиска:'
     }
   },
-  data: function () {
+  data () {
     return {
       text: ''
     }
   },
   computed: {
-    ...mapGetters('bankLicenses', ['getSelectedLicense']),
+    ...mapGetters('bankLicenses', [
+      'getSelectedLicense'
+    ]),
     selectedLicense () {
       return this.getSelectedLicense
     }
@@ -109,7 +111,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 
 @import "styles/styles.less";
 </style>

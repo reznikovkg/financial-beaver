@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 
 .client-comment {
   display: flex;

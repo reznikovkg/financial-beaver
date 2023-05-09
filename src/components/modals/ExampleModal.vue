@@ -21,7 +21,7 @@ export default {
   computed: {
   },
   mounted () {
-    console.log(this)
+    // console.log(this)
   },
   methods: {
   }
