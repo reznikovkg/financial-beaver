@@ -47,15 +47,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.root {
-  color: F2F2F;
-}
+
 .title {
   &-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: white;
   }
 
   &__content {
@@ -68,6 +67,7 @@ export default {
     padding-bottom: 3%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     &__text{
       font-size: 100px;
       font-family: "Yeseva One", cursive;
@@ -75,7 +75,7 @@ export default {
       &::first-letter {
         color: blue;
       }
-      margin-left: 14%;
+      margin-left: 4%;
     }
   }
   &__plus {
@@ -110,7 +110,7 @@ export default {
       align-items: center;
       border-left: 2px solid gray;
       min-height: 100%;
-      margin-left: 13%;
+      margin-left: 8%;
 
       span {
         margin-left: 70%;

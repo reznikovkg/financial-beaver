@@ -23,6 +23,9 @@ import router from '@/router'
 export default {
   name: 'GoldenRingPage',
   components: { WideBottomPattern, WideTopPattern },
+  mounted () {
+    this.$openBoberModal({ param2: '2' })
+  },
   methods: {
     onOpenDeposit () {
       router.push('/golden-ring-deposit')
@@ -31,6 +34,6 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @import "styles/styles.less";
 </style>

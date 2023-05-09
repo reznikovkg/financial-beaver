@@ -1,9 +1,7 @@
 <template>
-  <div class="wrapper">
-    <IvanoffBankBaseComponent button-text="Оформить онлайн">
-      <IvanoffBankContentComponent/>
-    </IvanoffBankBaseComponent>
-  </div>
+  <IvanoffBankBaseComponent button-text="Оформить онлайн">
+    <IvanoffBankContentComponent/>
+  </IvanoffBankBaseComponent>
 </template>
 
 <script>
@@ -12,13 +10,12 @@ import IvanoffBankContentComponent from './components/IvanoffBankContentComponen
 
 export default {
   name: 'IvanoffBankPage',
-  components: { IvanoffBankBaseComponent, IvanoffBankContentComponent }
+  components: { IvanoffBankBaseComponent, IvanoffBankContentComponent },
+  mounted () {
+    this.$openBoberModal({ param2: '2' })
+  }
 }
 </script>
 
-<style lang="less">
-body {
-  margin: 0;
-  background-color: rgb(255, 248, 234);
-}
+<style lang="less" scoped>
 </style>

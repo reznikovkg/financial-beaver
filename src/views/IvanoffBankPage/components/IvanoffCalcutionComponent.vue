@@ -155,6 +155,7 @@ export default {
     background-color:white;
     height: 8rem;
   }
+
   &__text {
     margin-left: 10px;
     font-size: 2.3rem;
@@ -164,6 +165,7 @@ export default {
     color:#260407;
     margin-top:2rem;
   }
+
   &__subtext {
     margin-left: 10px;
     font-size: 1.1rem;
@@ -173,6 +175,7 @@ export default {
     color:#260407BF;
     padding-bottom: 1rem;
   }
+
   &__back-button{
     margin:30px;
     background: #D9232380;
@@ -181,6 +184,8 @@ export default {
     padding: 10px;
     border-radius: 50%;
     border: black solid 2px;
+    cursor: pointer;
+
     & img {
       width: 80%;
       height: 100%;

@@ -1,16 +1,18 @@
 <template>
   <div class="ivanoff-cont">
     <div class="ivanoff-cont__top">
-      <div class="ivanoff-cont__horizontal" style="margin: 30px;">
-        <div class="ivanoff-cont__back-button">
-          <img src="IvanoffBank/Vector.png" alt="arrow">
-        </div>
-        <div style="margin: auto; font-size: xx-large; font-weight: bold;">
+      <div class="ivanoff-cont__top-horizontal" style="margin: 30px;">
+        <router-link :to="{ name: 'banks' }">
+          <div class="ivanoff-cont__back-button">
+            <img src="IvanoffBank/Vector.png" alt="arrow">
+          </div>
+        </router-link>
+        <div style="margin: auto; font-size: xxx-large; font-weight: bold;">
           Вклад "Копилка +"
         </div>
       </div>
       <div class="ivanoff-cont__bet">
-        повышенная ставка на сбережения
+        Повышенная ставка на сбережения
       </div>
     </div>
     <div>
@@ -30,21 +32,21 @@
         </div>
       </div>
     </div>
-    <div class="ivanoff-cont__horizontal">
+    <div class="ivanoff-cont__horizontal-botton">
       <div style="margin: auto;">
-        <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large;">
+        <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large; font-weight: 200;">
           условия вклада
           <div class="ivanoff-cont__down-button" style="margin-left: auto; margin-right: 0px;">
             <img src="IvanoffBank/Vector2.png" alt="arrow">
           </div>
         </div>
-        <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large;">
+        <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large; font-weight: 200;">
           подробности
           <div class="ivanoff-cont__down-button" style="margin-left: auto; margin-right: 0px;">
             <img src="IvanoffBank/Vector2.png" alt="arrow">
           </div>
         </div>
-        <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large;">
+        <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large; font-weight: 200;">
           вопросы и ответы
           <div class="ivanoff-cont__down-button" style="margin-left: auto; margin-right: 0px;">
             <img src="IvanoffBank/Vector2.png" alt="arrow">
@@ -52,17 +54,19 @@
         </div>
       </div>
       <div class="ivanoff-cont__info-field" style="width: 400px; font-weight: bold; font-size: xx-large; height: 215px;">
-        Преимущества вкладов
-        <div class="ivanoff-cont__small-info-field" style="width: 350px; font-size: large;">
-          <img src="IvanoffBank/lock.png" alt="lock">
+        <div class="ivanoff-cont__info-field__title">
+          Преимущества вкладов
+        </div>
+        <div class="ivanoff-cont__small-info-field" style="width: 350px; margin-top: 0; font-size: large;">
+          <img src="IvanoffBank/lock.png" alt="lock" style="width: 26px;">
           вклад застрахован АСВ
         </div>
-        <div class="ivanoff-cont__small-info-field" style="width: 350px; font-size: large;">
-          <img src="IvanoffBank/world.png" alt="world">
+        <div class="ivanoff-cont__small-info-field" style="width: 350px; margin-top: 0; font-size: large;">
+          <img src="IvanoffBank/world.png" alt="world" style="width: 26px;">
           онлайн управление
         </div>
-        <div class="ivanoff-cont__small-info-field" style="width: 350px; font-size: large;">
-          <img src="IvanoffBank/user-octagon.png" alt="user">
+        <div class="ivanoff-cont__small-info-field" style="width: 350px; margin-top: 0; font-size: large;">
+          <img src="IvanoffBank/user-octagon.png" alt="user" style="width: 26px;">
           персональные условия
         </div>
       </div>
@@ -76,7 +80,7 @@
 
 <script>
 export default {
-  name: 'IvanoffBankBaseComponent',
+  name: 'IvanoffBankContentComponent',
   props: {
     buttonText: String
   },
@@ -91,14 +95,35 @@ export default {
 <style scoped lang="less">
 .ivanoff-cont {
   background: transparent;
+  font-family: "Jost";
+
+  &__top {
+    background-color: #ffffff;
+    padding: 2px 30px 30px 0;
+
+    &-horizontal {
+      display: flex;
+      align-items: center;
+    }
+  }
 
   &__bottom {
     display: flex;
+    background-color: #eeeaea;
+    padding-top: 14px;
   }
 
   &__horizontal {
     display: flex;
     align-items: center;
+    padding-top: 18px;
+    background-color: #eeeaea;
+
+    &-botton {
+      display: flex;
+      align-items: center;
+      background-color: #eeeaea;
+    }
   }
 
   &__button {
@@ -112,6 +137,7 @@ export default {
     color: white;
     font-size: large;
     font-weight: bold;
+    cursor: pointer;
   }
 
   &__back-button {
@@ -175,6 +201,15 @@ export default {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+
+    &__title {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      font-size: large;
+      font-weight: 700;
+      padding-left: 22px;
+    }
   }
 
   &__small-info-field {

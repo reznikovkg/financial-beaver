@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="tab.url ? { name: 'banks' } : {}">
+  <router-link class="bank-tab" :to="tab.url ? { name: 'banks' } : {}">
     <div class="tab__container">
       <div class="tab__header">
         <div class="tab__image"></div>
@@ -25,6 +25,16 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
+.bank-tab {
+  text-decoration: none;
+
+  &:hover {
+    .tab__title {
+      text-decoration: underline;
+    }
+  }
+}
 .tab {
   &__container {
     margin-top: 50px;
@@ -62,6 +72,7 @@ export default {
     font-size: 40px;
     line-height: 46px;
     margin-top: 3px;
+    text-decoration: none;
   }
   &__description {
     font-family: "Yeseva One";
@@ -74,5 +85,6 @@ export default {
     word-wrap: break-all;
     color: #212940bf;
   }
+
 }
 </style>
