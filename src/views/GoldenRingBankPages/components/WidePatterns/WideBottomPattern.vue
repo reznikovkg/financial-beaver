@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import router from '@/router'
 
 export default {
   name: 'WideBottomPattern',
@@ -11,11 +10,6 @@ export default {
     static: {
       type: Boolean,
       default: false
-    }
-  },
-  methods: {
-    onDepositContractClick () {
-      router.push('')
     }
   }
 }
