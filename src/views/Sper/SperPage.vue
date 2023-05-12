@@ -86,25 +86,25 @@ export default {
 
 <style lang="less" scoped>
 .sper-page {
-  padding: 8vmin 4vmin;
+  padding: 52px 26px;
   background-color: #F2F2F2;
 }
 
 .content {
-  padding-right: 4vmin;
+  padding-right: 26px;
 }
 
 .sper-logo--spacing {
-  margin-bottom: 4vmin;
+  margin-bottom: 26px;
 }
 
 .page-navbar {
-  margin-bottom: 8vmin;
-  padding-right: 25vmin;
+  margin-bottom: 52px;
+  padding-right: 162.5px;
 
   &__text {
     font-family: 'Prata';
-    font-size: 5vmin;
+    font-size: 32.5px;
 
     color: #000000;
 
@@ -113,30 +113,30 @@ export default {
 }
 
 .deposit-info--spacing {
-  margin-bottom: 13vmin;
+  margin-bottom: 84.5px;
 }
 
 .reviews-header {
   display: block;
 
   font-family: 'Prata';
-  font-size: 5vmin;
+  font-size: 32.5px;
 
-  margin-bottom: 2vmin;
+  margin-bottom: 13px;
 
   color: black;
 }
 
 .reviews--spacing {
-  margin-bottom: 10vmin;
+  margin-bottom: 65px;
 }
 
 .ad-feed {
   border-left: 2px solid black;
-  padding-left: 5vmin;
+  padding-left: 32.5px;
 
   &--spacing {
-    margin-bottom: 10vmin;
+    margin-bottom: 65px;
   }
 }
 </style>

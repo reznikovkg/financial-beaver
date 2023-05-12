@@ -115,22 +115,22 @@ export default {
 
 <style lang="less" scoped>
 .sper-calc {
-  padding: 5vmin;
+  padding: 32.5px;
   background-color: #F2F2F2;
   height: 100%;
 
   &__border {
-    padding-top: 2vmin;
+    padding-top: 13px;
     border-top: 2px solid #727272;
   }
 
   &__logo {
-    margin-bottom: 2vmin;
+    margin-bottom: 13px;
   }
 
   &__header {
     font-family: "Prata";
-    font-size: 5vmin;
+    font-size: 32.5px;
 
     text-align: center;
 
@@ -143,23 +143,23 @@ export default {
 
     border-radius: 15px;
     border-collapse: separate;
-    border-spacing: 5vmin 0vmin;
+    border-spacing: 32.5px 0px;
 
-    padding: 2vmin 1vmin;
-    margin: 5vmin 0vmin;
+    padding: 13px 6.5px;
+    margin: 32.5px 0px;
 
     &__header {
       font-family: "Prata";
-      font-size: 3.25vmin;
+      font-size: 21.12px;
     }
 
     &__item {
       font-family: "Prata";
-      font-size: 3.25vmin;
+      font-size: 21.12px;
 
       background: white;
 
-      height: 8.5vmin;
+      height: 55.25px;
 
       &--cycle {
         border-radius: 15px;
@@ -178,6 +178,6 @@ export default {
 
 .order-button {
   float: right;
-  height: 10vmin;
+  height: 65px;
 }
 </style>

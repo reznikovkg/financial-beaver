@@ -69,7 +69,7 @@ export default {
 
 <style lang="less" scoped>
 .deposit-info {
-  padding: 2.25vmin;
+  padding: 14.62px;
 
   background: #D9D9D9;
   border-radius: 25px;
@@ -77,7 +77,7 @@ export default {
   &__text {
     font-family: 'Inter';
     font-weight: bold;
-    font-size: 4.5vmin;
+    font-size: 29.25px;
     text-shadow: 1px 0 1px #B9B9B9,
       0 1px 1px #B9B9B9,
       -1px 0 1px #B9B9B9,
@@ -87,7 +87,7 @@ export default {
   }
 
   &__calculate {
-    margin-top: 1vmin;
+    margin-top: 6.5px;
   }
 }
 </style>

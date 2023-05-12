@@ -48,13 +48,13 @@ export default {
 .rounded-button {
   border: none;
 
-  padding: 0.5vmin 2.75vmin;
+  padding: 3.25px 17.88px;
 
   cursor: pointer;
 
   &__text {
     font-family: 'Inter';
-    font-size: 3.5vmin;
+    font-size: 22.75px;
     font-weight: bold;
   }
 }

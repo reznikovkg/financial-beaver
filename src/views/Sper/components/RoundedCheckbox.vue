@@ -77,7 +77,7 @@ export default {
 
   &__text {
     font-family: "Prata";
-    font-size: 3vmin;
+    font-size: 19.5px;
   }
 }
 

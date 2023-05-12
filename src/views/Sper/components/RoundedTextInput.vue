@@ -43,7 +43,7 @@ export default {
     outline: none;
 
     font-family: "Prata";
-    font-size: 3.25vmin;
+    font-size: 21.12px;
 
     background: white;
     text-align: center;
