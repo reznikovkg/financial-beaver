@@ -88,6 +88,8 @@ export default {
 .sper-page {
   padding: 52px 26px;
   background-color: #F2F2F2;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .content {
