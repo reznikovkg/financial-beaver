@@ -24,24 +24,24 @@ export default {
 .ad-card-holder {
   box-sizing: border-box;
 
-  max-width: 24.75vmin;
-  max-height: 37.5vmin;
+  max-width: 160.88px;
+  max-height: 243.75px;
 
-  padding: 2.5vmin;
+  padding: 16.25px;
 
   background: #D9D9D9;
   border: 1px solid black;
 
   &__img {
-    width: 19.5vmin;
-    height: 18.75vmin;
+    width: 126.75px;
+    height: 121.88px;
   }
 
   &__text {
     font-family: "Inter";
-    font-size: 1.7vmin;
+    font-size: 11.05px;
 
-    padding: 0vmin 1.5vmin;
+    padding: 0px 9.75px;
 
     word-wrap: break-word;
   }
