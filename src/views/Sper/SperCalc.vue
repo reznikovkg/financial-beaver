@@ -117,7 +117,7 @@ export default {
 .sper-calc {
   padding: 32.5px;
   background-color: #F2F2F2;
-  height: 100%;
+  height: 100vh;
 
   &__border {
     padding-top: 13px;
