@@ -2,25 +2,27 @@
   <div>
     <ul class="deposit-preview">
       <li style="width: 12%;">
-        <img :src="deposit.bankIcon" alt="BankIcon" class="deposit-preview__image" />
-      </li>
-      <li style="width: 40%;" class="deposit-preview__block">
-        <div style="font-size: xx-large; font-weight: bold;">{{ deposit.depositName }}</div>
-        <div class="deposit-preview__flex">
-          <div style="opacity: 75%; font-weight: bold; font-size: x-large;">{{ deposit.bankName }}</div>
-          <div style="opacity: 75%;">лиц. №{{ deposit.licenseNumber }}</div>
-          <div style="opacity: 50%;">★ {{ deposit.rating }}</div>
+        <div class="deposit-preview__img">
+          <img :src="deposit.bankIcon" alt="BankIcon" class="deposit-preview__image" />
         </div>
       </li>
-      <li class="deposit-preview__block" style="width: 8%;">
+      <li style="width: 40%;" class="deposit-preview__block">
+        <div style="font-size: 26px; font-weight: bold;">{{ deposit.depositName }}</div>
+        <div class="deposit-preview__flex">
+          <div style="opacity: 75%; margin-right:10px; font-weight: bold; font-size: 18px;">{{ deposit.bankName }}</div>
+          <div style="opacity: 75%; margin-right: 10px; font-size: 18px;">лиц. №{{ deposit.licenseNumber }}</div>
+          <div style="opacity: 50%; font-size: 18px">★ {{ deposit.rating }}</div>
+        </div>
+      </li>
+      <li class="deposit-preview__block" style="width: 10%; font-size: 32px; font-weight: 500;">
         <div style="font-weight: bold;">Ставка</div>
         <div style="font-size: medium;">До {{ deposit.rate }}%</div>
       </li>
-      <li class="deposit-preview__block" style="width: 10%;">
+      <li class="deposit-preview__block" style="width: 12%;">
         <div style="font-weight: bold;">Срок</div>
         <div style="font-size: medium;">{{ deposit.period }}</div>
       </li>
-      <li class="deposit-preview__block" style="width: 10%;">
+      <li class="deposit-preview__block" style="width: 14%;">
         <div style="font-weight: bold;">Сумма</div>
         <div style="font-size: medium;">{{ deposit.sum }}₽</div>
       </li>
@@ -63,6 +65,7 @@ export default {
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   color: #212940;
   margin-bottom: 20px;
+  font-family: 'Ubuntu';
   & ul {
     display: table-row;
   }
@@ -78,7 +81,7 @@ export default {
     }
   }
   &__block>* {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     font-size: large;
   }
   &__flex {
@@ -87,15 +90,25 @@ export default {
       margin-right: 10px;
     }
   }
+
+  &__img {
+    width: 74px;
+    height: 74px;
+    margin-left: 20px;
+    background-color: #f2f2f2;
+    border-radius: 100%;
+  }
+
   &__image {
     height: auto;
-    width: 100px;
+    width: 72px;
     border-radius: 50%;
-    margin-left: 10px;
+    margin-left: 2px;
+    margin-top: 2px;
   }
   &__button {
     background: #4E63D9;
-    height: 70%;
+    height: 68px;
     border-radius: 20px;
     border: 0px;
     color: white;
