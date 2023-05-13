@@ -2,6 +2,7 @@ import ExampleModal from '../components/modals/ExampleModal.vue'
 import BoberModal from '../components/modals/BoberModal.vue'
 import GoalsModal from '../components/modals/GoalsModal.vue'
 import AdvertisingModal from '../components/modals/AdvertisingModal .vue'
+import GoldenRingModal from '@/components/modals/GoldenRingModal.vue'
 
 export default {
   install (Vue, options) {
@@ -16,6 +17,9 @@ export default {
     }
     Vue.prototype.$openAdvertisingModal = function (v) {
       this.$modal.show(AdvertisingModal, { param: 1, v }, { width: '900px', height: 'auto', class: 'modal-adv' })
+    }
+    Vue.prototype.$openGoldenRingModal = function (v) {
+      this.$modal.show(GoldenRingModal, { param: 1, v }, { width: '1200px', height: 'auto', class: 'modal-adv' })
     }
   }
 }
