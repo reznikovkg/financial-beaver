@@ -33,18 +33,18 @@ export default {
   flex-direction: row;
 
   &__img {
-    height: 20vmin;
-    width: 25vmin;
+    height: 130px;
+    width: 162.5px;
   }
 
   &__body {
     display: flex;
     flex-direction: column;
 
-    margin-left: 2vmin;
+    margin-left: 13px;
 
     font-family: "Prata";
-    font-size: 3vmin;
+    font-size: 19.5px;
 
     &__header {
       font-weight: bold;

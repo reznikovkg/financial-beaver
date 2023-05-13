@@ -52,31 +52,29 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
-body {
-  background-color: #F2F2F2;
-}
-
 .sper-contract {
-  padding: 5vmin;
+  padding: 32.5px;
+  background-color: #F2F2F2;
+  min-height: 100vh;
+  box-sizing: border-box;
 
   &__border {
-    padding-top: 2vmin;
+    padding-top: 13px;
     border-top: 2px solid #727272;
   }
 
   &__text {
     font-family: "Open Sans";
-    font-size: 3vmin;
+    font-size: 19.5px;
 
-    padding: 3vmin;
+    padding: 19.5px;
     background: #D9D9D9;
 
-    margin-bottom: 3vmin;
+    margin-bottom: 19.5px;
   }
 
   &__logo {
-    margin-bottom: 2vmin;
+    margin-bottom: 13px;
   }
 }
 
