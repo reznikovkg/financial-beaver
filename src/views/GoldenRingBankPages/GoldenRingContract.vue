@@ -38,7 +38,7 @@
       3.1 Банк обязуется открыть счёт для хранения депозита, обеспечить сохранность депозита и выплачивать доход в
       соответствии с договором
     </p>
-    <router-link class="button__link" :to="{ name: 'result' }">
+    <router-link class="button__link" :to="{ name: 'result', query: { bank: 'gk' } }">
       <button class="button" style="margin: 5vmin auto">Я согласен с условиями</button>
     </router-link>
   </div>
