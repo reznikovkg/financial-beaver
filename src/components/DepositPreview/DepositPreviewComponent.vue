@@ -14,7 +14,7 @@
           <div style="opacity: 50%; font-size: 18px">★ {{ deposit.rating }}</div>
         </div>
       </li>
-      <li class="deposit-preview__block" style="width: 10%; font-size: 32px; font-weight: 500;">
+      <li class="deposit-preview__block" style="width: 10%;">
         <div style="font-weight: bold;">Ставка</div>
         <div style="font-size: medium;">До {{ deposit.rate }}%</div>
       </li>
