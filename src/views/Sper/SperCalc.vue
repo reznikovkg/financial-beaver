@@ -23,10 +23,10 @@
           <RoundedTextInput v-model="minDepositSum" id="minDepositSum" />
         </td>
         <td align="center" class="sper-calc__body__item sper-calc__body__item--cycle">
-          {{ this.deposit.monthCount }}
+          <RoundedTextInput v-model="monthCount" id="monthCount" />
         </td>
         <td align="center" class="sper-calc__body__item sper-calc__body__item--cycle">
-          {{ this.deposit.percentage }}
+          <RoundedTextInput v-model="percentage" id="percentage" />
         </td>
         <td align="center" class="sper-calc__body__item">
           Доход:<br>{{ separateDigitsInNumber(this.calculateIncome, ' ') }}
@@ -83,6 +83,28 @@ export default {
         this.deposit.minDepositSum = !isNaN(parsedValue)
           ? parsedValue
           : this.deposit.minDepositSum
+      }
+    },
+    monthCount: {
+      get () {
+        return this.deposit.monthCount.toString()
+      },
+      set (value) {
+        const parsedValue = parseInt(value, 10)
+        this.deposit.monthCount = !isNaN(parsedValue)
+          ? parsedValue
+          : this.deposit.monthCount
+      }
+    },
+    percentage: {
+      get () {
+        return this.deposit.percentage.toString()
+      },
+      set (value) {
+        const parsedValue = parseInt(value, 10)
+        this.deposit.percentage = !isNaN(parsedValue)
+          ? parsedValue
+          : this.deposit.percentage
       }
     }
   },
