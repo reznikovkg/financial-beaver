@@ -44,6 +44,13 @@ export default {
     licenses () {
       return this.getLicenses
     }
+  },
+  mounted () {
+    window.addEventListener('beforeunload', () => {
+      localStorage.infoPageOpened = ''
+    })
+
+    localStorage.infoPageOpened = true
   }
 }
 </script>

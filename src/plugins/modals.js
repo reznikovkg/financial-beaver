@@ -10,7 +10,9 @@ export default {
       this.$modal.show(ExampleModal, { param: 1, v }, { width: '300px' })
     }
     Vue.prototype.$openBoberModal = function (v) {
-      this.$modal.show(BoberModal, { param: 1, v }, { width: '400px', class: 'modal-bober' })
+      if (!localStorage.infoPageOpened) {
+        this.$modal.show(BoberModal, { param: 1, v }, { width: '400px', class: 'modal-bober' })
+      }
     }
     Vue.prototype.$openGoalsModal = function (v) {
       this.$modal.show(GoalsModal, { param: 1, v }, { width: '400px', class: 'modal-bober' })
