@@ -29,7 +29,7 @@
           </div>
           <div class="user-data__guarantee">
             <div class="user-data__guarantee__img__wrapper">
-              <img class="user-data__guarantee__img" src="./../../../dist/img/guarantee.png">
+              <img class="user-data__guarantee__img" src="IvanoffBank/guarantee.png">
             </div>
             <div class="user-data__guarantee__text">
               Мы гарантируем безопасность ваших данных
@@ -94,7 +94,7 @@
           </div>
           <div class="condition__btn__wrapper" style="margin-top: 25px">
             <div class="condition__btn__img__wrapper">
-              <img class="condition__btn__img" src="./../../../dist/img/dogovor.png">
+              <img class="condition__btn__img" src="IvanoffBank/dogovor.png">
             </div>
             <router-link :to="{name: 'ivanoff-contract'}" tag="div" class="condition__btn__text">
                 показать договор
