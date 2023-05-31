@@ -73,23 +73,23 @@
                 value="yes"
                 class="condition__checkbox"
               />
-              <p class="dasdasd">Повышенная ставка</p>
+              <p class="dasdasd" style="font-family: 'Inter';">Повышенная ставка</p>
             </label>
             <div class="condition__checkbox__text">
               Деньги можно вносить только в течение первого месяца, но доходность выше
             </div>
           </div>
-          <div class="condition__checkbox__wrapper">
+          <div class="condition__checkbox__wrapper" style="margin-top: 8px">
             <label style="display:flex; align-items: center;">
               <input
                 type="checkbox"
                 value="yes"
                 class="condition__checkbox"
               />
-              <p class="dasdasd">Оставлять проценты</p>
+              <p class="dasdasd" style="font-family: 'Inter';">Оставлять проценты</p>
             </label>
               <div class="condition__checkbox__text">
-                Деньги можно вносить только в течение первого месяца, но доходность выше
+                Оставляйте проценты на вкладе, чтобы увеличить доходность
               </div>
           </div>
           <div class="condition__btn__wrapper" style="margin-top: 25px">
@@ -272,7 +272,11 @@ export default {
   }
 
 }
-
+.condition__checkbox
+{
+  width: 20px;
+  height: 20px;
+}
 .condition__checkbox__wrapper {
   width: 100%;
 }
@@ -388,7 +392,7 @@ export default {
   margin-left:8px;
   margin-right: 10px;
   color: #260407;
-  font-size: 16px;
+  font-size: 12px;
 }
 .asfasfasfas {
   display: flex;

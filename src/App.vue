@@ -33,10 +33,6 @@
           <router-link :to="{ name: 'ivanoff' }">
             Ivanoff page
           </router-link>
-        </p><p>
-          <router-link :to="{ name: 'ivanoff-info' }">
-            Ivanoff Info page
-          </router-link>
         </p>
         <p>
           <router-link :to="{ name: 'license-info-search' }">

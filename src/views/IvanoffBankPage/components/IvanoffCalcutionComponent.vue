@@ -24,7 +24,7 @@
                 type="checkbox"
                 value="no"
                 class="calculation__deposit__checkbox"
-              /><p style="margin-left:0.3rem">Повышенная ставка</p>
+              /><p  style="font-family: 'Inter'; margin-left:0.3rem">Повышенная ставка</p>
             </label>
           </div>
           <div class="calculation__period">
@@ -39,7 +39,7 @@
                 type="checkbox"
                 value="yes"
                 class="calculation__period__checkbox"
-              /><p style="margin-left:0.3rem">Оставлять проценты</p>
+              /><p style="font-family: 'Inter'; margin-left:0.3rem">Оставлять проценты</p>
             </label>
           </div>
         </div>

@@ -221,7 +221,7 @@ export default {
   &__small-info-field {
     margin: auto;
     padding: 5px;
-    background: #E4E4E4;
+    background: #EFEFEF;
     border-radius: 5px;
     font-size: large;
     display: flex;
