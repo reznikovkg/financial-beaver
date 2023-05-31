@@ -22,7 +22,7 @@
         <div class="ivanoff-page__horizontal ivanoff-page__left" style="margin: 15px;">
           <img src="IvanoffBank/down_left.png" alt="flags/contact">
         </div>
-        <router-link class="ivanoff-page__button-link" :to="{ name: 'result', query: { bank: 'ivanoff' } }">
+        <router-link v-if="buttonText" class="ivanoff-page__button-link" :to="{ name: 'result', query: { bank: 'ivanoff' } }">
           <button class="ivanoff-page__button">{{ buttonText }}</button>
         </router-link>
         <div class="ivanoff-page__right" style="margin: 15px; display: flex; justify-content: center; flex-direction: column; text-align: center;">
@@ -40,7 +40,8 @@
 export default {
   name: 'IvanoffBankBaseComponent',
   props: {
-    buttonText: String
+    buttonText: String,
+    default: null
   }
 }
 </script>

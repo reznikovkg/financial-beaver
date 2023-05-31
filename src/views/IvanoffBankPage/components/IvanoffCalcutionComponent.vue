@@ -197,7 +197,6 @@ export default {
   &__content {
     display: flex;
     flex-direction: column;
-    background-color: #DCDCDC;
     background-color: #ededeb;
     height: 27rem;
   }
@@ -206,7 +205,6 @@ export default {
   &-container{
     display: flex;
     border-radius: 7px;
-    background-color: #F2F2F2;
     background-color: white;
     margin-top:3rem;
     margin-left: 1.6rem;
@@ -324,7 +322,6 @@ export default {
     display: flex;
     flex-direction: column;
     border-radius: 7px;
-    background-color: #F2F2F2;
     background-color: white;
     margin-top:3rem;
     margin-left: 1.6rem;
