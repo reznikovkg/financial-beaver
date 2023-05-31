@@ -61,6 +61,16 @@ const routes = [
     component: () => import(/* webpackChunkName: "ResultPage" */ '../views/IvanoffBankPage/IvanoffBankPage.vue')
   },
   {
+    path: '/ivanoff-info',
+    name: 'ivanoff-info',
+    component: () => import(/* webpackChunkName: "ResultPage" */ '../views/IvanoffBankPage/InformationPage.vue')
+  },
+  {
+    path: '/ivanoff-contract',
+    name: 'ivanoff-contract',
+    component: () => import(/* webpackChunkName: "ResultPage" */ '../views/IvanoffBankPage/IvanoffBankContractPage.vue')
+  },
+  {
     path: '/golden-ring-deposit',
     name: 'golden-ring-deposit',
     component: () => import(/* webpackChunkName: "GoldenRingDeposit" */ '../views/GoldenRingBankPages/GoldenRingDepositPage.vue')

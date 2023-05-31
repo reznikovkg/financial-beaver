@@ -31,7 +31,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import router from '@/router'
 
 export default {
   name: 'LicenseCheckContainer',
@@ -55,7 +54,7 @@ export default {
       this.$router.push({ name: this.getSelectedLicense.urlName })
     },
     onGoBack () {
-      router.back()
+      this.$router.back()
     }
   }
 }

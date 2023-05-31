@@ -40,7 +40,7 @@ export default {
   name: 'IvanoffBankContractComponent',
   methods: {
     redirectToIvanoff () {
-      this.$router.push('/ivanoff')
+      this.$router.go(-1)
     }
   }
 }

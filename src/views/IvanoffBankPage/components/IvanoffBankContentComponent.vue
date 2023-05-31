@@ -34,12 +34,14 @@
     </div>
     <div class="ivanoff-cont__horizontal-botton">
       <div style="margin: auto;">
-        <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large; font-weight: 200;">
-          условия вклада
-          <div class="ivanoff-cont__down-button" style="margin-left: auto; margin-right: 0px;">
-            <img src="IvanoffBank/Vector2.png" alt="arrow">
+        <router-link :to="{ name: 'ivanoff-contract'}" tag="div">
+          <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large; font-weight: 200; cursor: pointer;">
+            условия вклада
+            <div class="ivanoff-cont__down-button" style="margin-left: auto; margin-right: 0px;">
+              <img src="IvanoffBank/Vector2.png" alt="arrow">
+            </div>
           </div>
-        </div>
+        </router-link>
         <div class="ivanoff-cont__info-field" style="width: 400px; font-size: xx-large; font-weight: 200;">
           подробности
           <div class="ivanoff-cont__down-button" style="margin-left: auto; margin-right: 0px;">
@@ -73,7 +75,9 @@
 
     </div>
     <div class="ivanoff-cont__bottom">
-        <button @click='redirectToCalculation' class="ivanoff-cont__button">Рассчитать доход</button>
+      <router-link :to="{name: 'calculation-page-temp'}">
+        <button class="ivanoff-cont__button">Рассчитать доход</button>
+        </router-link>
     </div>
   </div>
 </template>
@@ -111,6 +115,8 @@ export default {
     display: flex;
     background-color: #eeeaea;
     padding-top: 14px;
+    justify-content: center;
+    cursor: pointer;
   }
 
   &__horizontal {

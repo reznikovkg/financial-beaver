@@ -1,5 +1,5 @@
 <template>
-  <IvanoffBankBaseComponent button-text="Оформить онлайн">
+  <IvanoffBankBaseComponent button-text="Оформить онлайн" :route-btn="{ name: 'ivanoff-info' }">
     <IvanoffCalcutionComponent/>
   </IvanoffBankBaseComponent>
 </template>
