@@ -35,7 +35,8 @@ export default {
   },
   methods: {
     goTo () {
-      this.$router.push({ name: 'license-info-search' })
+      const routeData = this.$router.resolve({ name: 'license-info-search' })
+      window.open(routeData.href)
       this.$emit('close')
     }
   }

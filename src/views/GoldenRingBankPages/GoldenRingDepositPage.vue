@@ -54,7 +54,8 @@ export default {
   components: { RedLine, WideBottomPattern, WideTopPattern },
   methods: {
     onOpenDeposit () {
-      router.push('/golden-ring-contract')
+      const routeData = router.resolve('/golden-ring-contract')
+      window.open(routeData.href)
     },
     onIncomeCalculate () {
       this.$openGoldenRingModal()
