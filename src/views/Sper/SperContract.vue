@@ -22,11 +22,9 @@
       <RoundedCheckbox v-model="accept" id="accept" notActiveColor="#2AB514">
         Настоящим подтверждаю что ознакомился с договором
       </RoundedCheckbox>
-      <router-link class="result__link" :to="{ name: 'result', query: { bank: 'sper' } }">
-        <RoundedButton class="accept-block__order-button" button-shadow="" border-radius="15px">
+      <RoundedButton class="accept-block__order-button" button-shadow="" @click="() => clickAgree()" border-radius="15px">
         Согласен
-        </RoundedButton>
-      </router-link>
+      </RoundedButton>
     </div>
   </div>
 </template>
@@ -46,6 +44,13 @@ export default {
   data () {
     return {
       accept: false
+    }
+  },
+  methods: {
+    clickAgree () {
+      if (this.accept) {
+        this.$router.push({ name: 'result', query: { bank: 'sper' } })
+      }
     }
   }
 }

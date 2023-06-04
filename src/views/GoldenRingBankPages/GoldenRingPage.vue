@@ -3,7 +3,7 @@
     <WideTopPattern/>
     <div class="content-wrapper">
       <div class="text-container">
-        <span class="title block">Банк Золотое Кольцо</span>
+        <span class="title block licenz">Банк Золотое Кольцо</span>
         <span class="subtitle block">Банк для людей, которые хотят</span>
         <span class="subtitle--red block">ЖИТЬ ЛУЧШЕ</span>
         <div class="open-button"><span class="subtitle" @click="() => onOpenDeposit()">Открыть вклад под <span class="subtitle--red">13%</span> годовых</span>

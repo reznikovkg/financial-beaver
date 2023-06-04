@@ -46,7 +46,7 @@
               </div>
           </div>
           <div class="condition__content" style="margin-top: 20px">
-            <div style="font-family: 'Inter';font-size: 12px; color: #260407ca;">Скрок вклада
+            <div style="font-family: 'Inter';font-size: 12px; color: #260407ca;">Срок вклада
               <input
                 v-model="amount2"
                 type="text"

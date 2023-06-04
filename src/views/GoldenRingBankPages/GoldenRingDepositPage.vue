@@ -47,15 +47,13 @@
 import WideTopPattern from '@/views/GoldenRingBankPages/components/WidePatterns/WideTopPattern.vue'
 import WideBottomPattern from '@/views/GoldenRingBankPages/components/WidePatterns/WideBottomPattern.vue'
 import RedLine from '@/views/GoldenRingBankPages/components/Separator/RedLine.vue'
-import router from '@/router'
 
 export default {
   name: 'GoldenRingPage',
   components: { RedLine, WideBottomPattern, WideTopPattern },
   methods: {
     onOpenDeposit () {
-      const routeData = router.resolve('/golden-ring-contract')
-      window.open(routeData.href)
+      this.$router.push({ name: 'golden-ring-contract' })
     },
     onIncomeCalculate () {
       this.$openGoldenRingModal()

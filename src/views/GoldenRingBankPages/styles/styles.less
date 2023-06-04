@@ -24,7 +24,6 @@
 }
 
 .block {
-  margin-top: 2vmin;
   display: block;
 }
 
@@ -34,6 +33,22 @@
   font-weight: 400;
   font-size: 9vmin;
   color: #E1B61C;
+  position: relative;
+}
+
+.licenz {
+  &:before {
+    content: "лиц. №923045";
+    position: absolute;
+    opacity: 0.75;
+    font-size: 16px;
+    font-weight: 600;
+    color: #212940;
+    font-family: 'Open Sans';
+    top: -10px;
+    user-select: text;
+    -webkit-user-select: text;
+  }
 }
 
 .subtitle {

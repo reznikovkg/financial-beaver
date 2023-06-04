@@ -107,7 +107,7 @@ export default {
   margin: 0;
   background-color: rgb(255, 248, 234);
   min-height: 100vh;
-  background: linear-gradient(1deg, #dceeeb, white);
+  background: linear-gradient(1deg, #ebecf2, white);
 }
 
 .result {

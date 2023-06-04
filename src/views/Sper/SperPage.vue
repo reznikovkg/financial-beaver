@@ -3,7 +3,7 @@
     <table cellpadding="0" cellspacing="0" width="100%">
       <tr>
         <td width="90%" class="content">
-          <SperLogo class="sper-logo--spacing" :with-quote="true" />
+          <SperLogo class="sper-logo--spacing" :with-quote="true" :with-number="true"  />
           <nav class="noselect page-navbar">
             <table cellpadding="0" cellspacing="0" width="100%">
               <tr>

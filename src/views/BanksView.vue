@@ -68,7 +68,7 @@ export default {
 <style scoped lang="less">
 .wrapper {
   margin: 0;
-  background: linear-gradient(1deg, #dceeeb, white);
+  background: linear-gradient(1deg, #ebecf2, white);
   min-height: 100vh;
 }
 
@@ -162,6 +162,7 @@ export default {
     line-height: 55px;
     font-weight: 700;
     margin-left: 32px;
+    cursor: pointer;
   }
 }
 </style>

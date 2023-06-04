@@ -122,7 +122,6 @@ export default {
   },
   methods: {
     openAdv () {
-      console.log(1)
       if (!this.isShowAdv) {
         this.isShowAdv = true
         this.$openAdvertisingModal({ param2: '2' })

@@ -6,6 +6,9 @@
           <img src="bankIcons/Ivanoff.png" alt="bank image" class="ivanoff-page__image">
           <h1>Ivanoff</h1>
         </div>
+        <div v-if="withNumber" class="ivanoff-page__horizontal ivanoff-page__number">
+          лиц. №014889
+        </div>
         <div class="ivanoff-page__horizontal ivanoff-page__right" style="float: right;">
           <img src="IvanoffBank/keyhole.png" alt="keyhole image" class="ivanoff-page__image">
           <div>
@@ -42,7 +45,11 @@ export default {
   props: {
     buttonText: String,
     default: null,
-    routeBtn: Object
+    routeBtn: Object,
+    withNumber: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>
@@ -103,9 +110,18 @@ export default {
   }
 
   &__left {
-    margin-right: auto;
     margin-left: 0px;
   }
+
+  &__number {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    opacity: 0.75;
+    font-size: 16px;
+    padding-left: 10px;
+    color: #212940;
+  }
+
   &__button {
     margin: auto;
     width: 400px;
